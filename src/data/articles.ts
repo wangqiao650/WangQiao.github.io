@@ -766,5 +766,20 @@ export const ARTICLE_DATA = [
     en: {
       title: 'why LuN3cy？My ID History',
     }
+  },
+  {
+    id: 't10',
+    common: {
+      category: ArticleCategory.TALK,
+      link: 'https://mp.weixin.qq.com/s/p6xZpONRlVXnj9ee6muX_g',
+      coverImage: 'https://mmbiz.qpic.cn/sz_mmbiz_png/MlWt1JT1F3IM6Y9icGx7hx4O6CiaH1oprmuYuP9Qj3Ojicfu9u2RPsQJU9f2xwEzvSsgzmFPDZBjmy3zpNyYTu7NZk7wsmdSwH9NZZ9FJFUpS4/640?wx_fmt=png&amp;from=appmsg#imgIndex=0',
+      date: '2026-03-08'
+    },
+    zh: {
+      title: '人最重要的，是“保持流动”',
+    },
+    en: {
+      title: 'The Most Important Thing , Is "Flow"',
+    }
   }
 ];
