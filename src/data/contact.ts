@@ -1,59 +1,38 @@
 import { Language } from '../../types';
 
-export interface SocialLinks {
-  wechat: string;
-  xiaohongshu: string;
-  bilibili: string;
-  px500: string;
-}
-
-export interface ContactContent {
-  baseLabel: string;
-  locationValue: string;
-  contactLabel: string;
-  emailMeLabel: string;
-  email: string;
-  hello: string;
-  intro: string;
-  socials: SocialLinks;
-  tooltip?: string;
-  githubLabel: string;
-  footerDesign: string;
-}
-
-export const CONTACT_DATA: Record<Language, ContactContent> = {
+export const CONTACT_DATA: Record<Language, any> = {
   zh: {
-    baseLabel: "BASE",
-    locationValue: "Your City, Country",
+    baseLabel: "常驻",
+    locationValue: "中国 · 广州",
     contactLabel: "取得联系",
     emailMeLabel: "邮箱",
-    email: "your.email@example.com",
-    hello: "你好 ;-)",
-    intro: "欢迎探讨与合作。",
+    email: "3058749862@qq.com",
+    hello: "你好呀！",
+    intro: "正在寻找视频制作、AI 创作及新媒体相关的合作机会。",
     socials: {
-      wechat: "YourWeChatID",
-      xiaohongshu: "YourID",
-      bilibili: "YourID",
-      px500: "YourID"
+      wechat: "王巧 (19891738569)",
+      xiaohongshu: "新媒体剪辑达人",
+      bilibili: "王巧的视频空间",
+      px500: "视觉作品集"
     },
     githubLabel: "GitHub",
-    footerDesign: "Powered by Gemini 3 Pro"
+    footerDesign: "王巧的个人作品集 · 2026"
   },
   en: {
     baseLabel: "BASE",
-    locationValue: "Your City, Country",
+    locationValue: "Guangzhou, China",
     contactLabel: "Get in touch",
     emailMeLabel: "Email Me",
-    email: "your.email@example.com",
-    hello: "Hello ;-)",
-    intro: "Welcome to discuss & cooperate.",
+    email: "3058749862@qq.com",
+    hello: "Hello!",
+    intro: "Looking for opportunities in Video Production and AI Art.",
     socials: {
-      wechat: "YourWeChatID",
-      xiaohongshu: "YourID",
-      bilibili: "YourID",
-      px500: "YourID"
+      wechat: "Wang Qiao",
+      xiaohongshu: "RedNote",
+      bilibili: "Bilibili",
+      px500: "500px"
     },
     githubLabel: "GitHub",
-    footerDesign: "Powered by Gemini 3 Pro"
+    footerDesign: "Wang Qiao's Portfolio · 2026"
   }
 };
