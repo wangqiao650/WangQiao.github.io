@@ -15,7 +15,7 @@ export const CONTACT_DATA: Record<Language, any> = {
       bilibili: "老天爷赏饭吃-",
       px500: "视觉作品集"
     },
-    githubLabel: "wangqiao650",
+    githubLabel: "github",
     footerDesign: "王巧的个人作品集 · 2026"
   },
   en: {
@@ -32,7 +32,7 @@ export const CONTACT_DATA: Record<Language, any> = {
       bilibili: "1628388290",
       px500: "500px"
     },
-    githubLabel: "wangqiao650",
+    githubLabel: "github",
     footerDesign: "Wang Qiao's Portfolio · 2026"
   }
 };
