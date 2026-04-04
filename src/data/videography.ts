@@ -2,31 +2,50 @@ import { Project } from '../../types';
 
 export const VIDEOGRAPHY_DATA: Project[] = [
   {
-    id: 'sample-1',
+    id: 'v1',
     common: {
-      category: 'Category Name',
-      image: 'https://via.placeholder.com/1920x1080?text=Project+Cover',
-      // bilibiliId: 'BVxxxxxxx' // For video
+      category: 'Video Production',
+      image: 'https://via.placeholder.com/800x450?text=Viral+Video+1', // 建议替换为你的视频封面图
+      videoUrl: 'https://v.douyin.com/0JEHJ0nFSLY/', // 替换为你视频的实际链接
     },
     zh: {
-      title: '示例项目标题',
-      subtitle: '示例副标题',
-      description: '项目描述占位符。',
-      role: '角色',
-      tags: ['标签1', '标签2'],
-      awards: [],
-      concept: "",
-      roleDetail: ""
+      title: '“整个路人”系列短视频',
+      subtitle: '新概念系列剪辑',
+      description: '单条视频点赞超百万，负责全流程剪辑与视觉包装。',
+      role: '剪辑助理 / 视觉包装',
+      tags: ['爆款', '百万点赞', '剪辑技巧'],
+      concept: "通过节奏感极强的剪辑逻辑，将素材重新解构，创造出符合新媒体传播规律的内容。"
     },
     en: {
-      title: 'Example Project Title',
-      subtitle: 'Example Subtitle',
-      description: 'Project description placeholder.',
-      role: 'Role',
-      tags: ['Tag 1', 'Tag 2'],
-      awards: [],
-      concept: "",
-      roleDetail: ""
+      title: '"Zheng Ge Lu Ren" Series',
+      subtitle: 'Viral Short Video Series',
+      description: 'Achieved over 1 million likes. Responsible for full-process editing.',
+      role: 'Video Editor',
+      tags: ['Viral', '1M+ Likes', 'Fast-paced'],
+      concept: "Deconstructing raw footage into high-engagement content through rhythmic editing."
+    }
+  },
+  {
+    id: 'v2',
+    common: {
+      category: 'Commercial Video',
+      image: 'https://via.placeholder.com/800x450?text=Sales+Video', 
+    },
+    zh: {
+      title: '跨境电商营销视频',
+      subtitle: 'YouTube / TikTok 运营内容',
+      description: '助力个人销售额达到 15 万，主导账号内容的产出与引流。',
+      role: '剪辑师 / 内容运营',
+      tags: ['带货', '跨境电商', '转化率'],
+      concept: "结合产品特性与外网用户偏好，通过视觉引导提升点击率与转化率。"
+    },
+    en: {
+      title: 'E-commerce Marketing Video',
+      subtitle: 'Global Platform Strategy',
+      description: 'Contributed to 150k CNY sales through strategic content production.',
+      role: 'Lead Video Editor',
+      tags: ['E-commerce', 'Sales Driven', 'Global'],
+      concept: "Optimizing visual guidance to boost CTR and conversion rates for global users."
     }
   }
 ];
