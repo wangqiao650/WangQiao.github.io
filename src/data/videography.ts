@@ -32,12 +32,12 @@ export const VIDEOGRAPHY_DATA: Project[] = [
       image: 'https://via.placeholder.com/800x450?text=Sales+Video', 
     },
     zh: {
-      title: '跨境电商营销视频',
+      title: '汽车品牌营销视频',
       subtitle: 'YouTube / TikTok 运营内容',
-      description: '助力个人销售额达到 15 万，主导账号内容的产出与引流。',
+      description: '个人月销售额达到 15 万，主导账号内容的产出与引流。',
       role: '剪辑师 / 内容运营',
       tags: ['带货', '跨境电商', '转化率'],
-      concept: "结合产品特性与外网用户偏好，通过视觉引导提升点击率与转化率。"
+      concept: "结合产品特性与汽车用户偏好，通过视觉引导提升点击率与转化率。"
     },
     en: {
       title: 'E-commerce Marketing Video',
