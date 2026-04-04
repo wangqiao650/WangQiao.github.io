@@ -1,76 +1,74 @@
-import { Language, Experience, HonorsData } from '../../types';
+import { Language } from '../../types';
 
-export interface EducationPageContent {
-  title: string;
-  about: string;
-  openToWork: string;
-  viewHonorsLabel: string;
-  honorsTitle: string;
-  competitionsTitle: string;
-  scholarshipsLabel: string;
-  titlesLabel: string;
-  experiences: Experience[];
-  honors: HonorsData;
-}
-
-export const EDUCATION_DATA: Record<Language, EducationPageContent> = {
+export const EDUCATION_DATA: Record<Language, any> = {
   zh: {
     title: "教育经历",
-    about: "A brief introduction about your educational background and passions.",
-    openToWork: "边学边做+等待实习",
-    viewHonorsLabel: "查看在校荣誉",
+    about: "就读于湖南应用技术学院数字媒体艺术专业，专业前 15%。擅长数字图像处理、影视后期及特效制作。",
+    openToWork: "2025届毕业生 | 寻找视频制作/AI创作/新媒体岗位",
+    viewHonorsLabel: "查看荣誉奖项",
     honorsTitle: "在校荣誉",
-    competitionsTitle: "竞赛奖项",
+    competitionsTitle: "竞赛与技能",
     scholarshipsLabel: "奖学金",
     titlesLabel: "荣誉称号",
     experiences: [
       {
         id: '1',
-        year: '20XX - Present',
-        title: '学位 / 专业',
-        institution: '你的大学名称',
-        description: '关于你学习内容的简短描述。',
+        year: '2021.09 - 2025.06',
+        title: '数字媒体艺术 (本科)',
+        institution: '湖南应用技术学院',
+        description: '核心课程：数字图像处理、影视后期制作、影视特效、音视频处理等。',
         type: 'education'
+      },
+      {
+        id: '2',
+        year: '2023.06 - 2023.09',
+        title: '剪辑助理',
+        institution: '广州逸起文化传媒有限公司',
+        description: '负责账号内容全流程剪辑，参与百万点赞爆款视频制作。',
+        type: 'work'
+      },
+      {
+        id: '3',
+        year: '2025.02 - 2025.12',
+        title: '剪辑师',
+        institution: '广州乔卓科技有限公司',
+        description: '主导多平台内容产出，达成 15 万个人销售额，负责 YouTube/TikTok/Ins 运营。',
+        type: 'work'
       }
     ],
     honors: {
-      scholarships: ["示例奖学金"],
-      titles: ["示例荣誉称号"],
+      scholarships: ["专业前 15% 优秀学生"],
+      titles: ["校学生优秀干部"],
       competitions: [
-        {
-          level: "国家级",
-          awards: ["一等奖 | 示例竞赛名称"]
-        }
+        { level: "校级", awards: ["校排球杯第一名 (2023)", "院辩论赛第一名 (2022)"] },
+        { level: "技能", awards: ["英语二级", "普通话二级甲等", "计算机二级"] }
       ]
     }
   },
   en: {
     title: "Education",
-    about: "A brief introduction about your educational background and passions.",
-    openToWork: "Learning by Doing + Seeking Internship",
-    viewHonorsLabel: "View Honors & Awards",
-    honorsTitle: "Honors & Awards",
-    competitionsTitle: "Competition Awards",
+    about: "Digital Media Arts major at Hunan Institute of Applied Technology. Top 15% of the class.",
+    openToWork: "Class of 2025 | Seeking Video/AI/New Media Roles",
+    viewHonorsLabel: "Honors & Awards",
+    honorsTitle: "Academic Honors",
+    competitionsTitle: "Competitions",
     scholarshipsLabel: "Scholarships",
-    titlesLabel: "Honorary Titles",
+    titlesLabel: "Titles",
     experiences: [
       {
         id: '1',
-        year: '20XX - Present',
-        title: 'Degree / Major',
-        institution: 'Your University',
-        description: 'Brief description of your studies.',
+        year: '2021 - 2025',
+        title: 'Digital Media Arts (B.A.)',
+        institution: 'HIAT',
+        description: 'Focused on Video Production, VFX, and Digital Imaging.',
         type: 'education'
       }
     ],
     honors: {
-      scholarships: ["Example Scholarship"],
-      titles: ["Example Title"],
+      scholarships: ["Academic Excellence (Top 15%)"],
+      titles: ["Excellent Student Leader"],
       competitions: [
-        {
-          level: "National",
-          awards: ["1st Prize | Example Competition"]
-        }
+        { level: "Campus", awards: ["1st Prize - Volleyball Cup", "1st Prize - Debate Competition"] }
       ]
     }
   }
