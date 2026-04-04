@@ -1,39 +1,26 @@
 import { Language, Category } from '../../types';
 
-export interface HeroItem {
-  text: string;
-  annotation: string;
-  category: Category | null;
-}
-
-export interface HomeContent {
-  heroItems: HeroItem[];
-  intro: string;
-  selectedWorks: string;
-  years: string;
-}
-
-export const HOME_DATA: Record<Language, HomeContent> = {
+export const HOME_DATA: Record<Language, any> = {
   zh: {
     heroItems: [
-      { text: "摄影摄像", annotation: "（作品积累较多）", category: Category.VIDEO }, // category is kept as VIDEO but UI will split
-      { text: "平面交互", annotation: "（当前主攻，兴趣所在）", category: Category.DESIGN },
-      { text: "应用开发", annotation: "（vibe builder）", category: Category.DEV },
-      { text: "炒粉炒饭", annotation: "（还在学）", category: null }
+      { text: "视频制作", annotation: "（百万点赞剪辑手）", category: Category.VIDEO },
+      { text: "AI 艺术创作", annotation: "（探索创作新边界）", category: Category.DESIGN },
+      { text: "视觉设计", annotation: "（数媒艺术科班）", category: Category.DESIGN },
+      { text: "新媒体运营", annotation: "（实战派增长）", category: Category.DEV }
     ],
-    intro: "Your personal catchphrase or introduction goes here.",
+    intro: "一个集美貌与才华于一体的女子。热衷于探索未知领域，享受完成挑战后的满足感。为人有边界，善沟通，心态好。",
     selectedWorks: "精选作品",
-    years: "[ 20XX — 20XX ]"
+    years: "[ 2021 — 2025 ]"
   },
   en: {
     heroItems: [
-      { text: "Photography & Videography", annotation: "(Extensive Portfolio)", category: Category.VIDEO },
-      { text: "Graphic & UI", annotation: "(Main Focus & Passion)", category: Category.DESIGN },
-      { text: "Development", annotation: "(Vibe Coder)", category: Category.DEV },
-      { text: "Cooking", annotation: "(Still Learning)", category: null }
+      { text: "Video Production", annotation: "(Million-level Viral Editor)", category: Category.VIDEO },
+      { text: "AI Art Creation", annotation: "(Exploring New Boundaries)", category: Category.DESIGN },
+      { text: "Visual Design", annotation: "(Digital Media Art)", category: Category.DESIGN },
+      { text: "New Media", annotation: "(Growth Driven)", category: Category.DEV }
     ],
-    intro: "Your personal catchphrase or introduction goes here.",
+    intro: "A blend of aesthetic vision and professional talent. Passionate about exploring unknown fields and embracing challenges.",
     selectedWorks: "Selected Works",
-    years: "[ 20XX — 20XX ]"
+    years: "[ 2021 — 2025 ]"
   }
 };
