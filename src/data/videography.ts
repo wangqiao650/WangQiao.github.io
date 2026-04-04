@@ -14,7 +14,7 @@ export const VIDEOGRAPHY_DATA: Project[] = [
       description: '单条视频点赞超百万，负责全流程剪辑与视觉包装。',
       role: '剪辑助理 / 视觉包装',
       tags: ['爆款', '百万点赞', '剪辑技巧'],
-      concept: "通过节奏感极强的剪辑逻辑，将素材重新解构，创造出符合新媒体传播规律的内容。"
+      concept: "通过综艺感极强的剪辑逻辑，将素材进行搞笑处理，创造出符合新媒体传播规律的内容。"
     },
     en: {
       title: '"Zheng Ge Lu Ren" Series',
