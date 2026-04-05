@@ -3,27 +3,29 @@ import { Sparkles, Image, History, Send } from 'lucide-react';
 import { PROJECT_DATA } from './src/data/projects';
 import { ARTICLE_DATA } from './src/data/articles';
 
-// 1. 作品页面的分类标签 (Projects)
-export const CATEGORY_LABELS = {
+// 1. 作品集分类标签 (Portfolio - 用于顶部筛选和作品角标)
+export const CATEGORY_LABELS: Record<Language, Record<string, string>> = {
   zh: {
     'All': '全部',
-    'VIDEO PRODUCTION': '短视频制作',      // 必须和图片中的英文完全一致
-    'digital illustration': '数字插画'     // 必须和图片中的英文完全一致
-    'UI/UX DESIGN': '平面交互设计',        // 注意：如果图片里是大写，这里也要大写
-    'THESIS PROJECT': '本科毕设',
-    'MOTION GRAPHICS': '视觉特效研究'
+    'Video Production': '短视频制作',
+    'Digital Illustration': '数字插画',
+    'UI/UX Design': '交互设计',
+    'Thesis Project': '本科毕设',
+    'Motion Graphics': '视觉特效',
+    'AI Creation': 'AI 创作'
   },
   en: {
     'All': 'All',
-    'VIDEO PRODUCTION': 'Video Production',
-    'digital illustration': 'digital illustration',
-    'UI/UX DESIGN': 'UI/UX Design',
-    'THESIS PROJECT': 'Thesis Project',
-    'MOTION GRAPHICS': 'Motion Graphics'
+    'Video Production': 'Video Production',
+    'Digital Illustration': 'Digital Illustration',
+    'UI/UX Design': 'UI/UX Design',
+    'Thesis Project': 'Thesis Project',
+    'Motion Graphics': 'Motion Graphics',
+    'AI Creation': 'AI Creation'
   }
 };
 
-// 2. 经历页面的分类标签 (Experience - 用于时间轴筛选)
+// 建议同步更新经历页面的标签，保持风格统一
 export const EXPERIENCE_LABELS: Record<Language, Record<string, string>> = {
   zh: {
     'All': '全部',
