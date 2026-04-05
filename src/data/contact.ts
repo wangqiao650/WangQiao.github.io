@@ -4,11 +4,11 @@ export const CONTACT_DATA: Record<Language, any> = {
   zh: {
     baseLabel: "常驻",
     locationValue: "中国 · 广州",
-    contactLabel: "取得联系",
+    contactLabel: "你好呀！",
     emailMeLabel: "邮箱",
     email: "3058749862@qq.com",
     hello: "你好呀！",
-    intro: "正在寻找视频制作、AI 创作及新媒体相关的合作机会。",
+    intro: "我正在寻找视频制作、AI 创作及新媒体相关的合作机会。",
     socials: {
       wechat: "wwqq3058749862",
       xiaohongshu: "老天爷赏饭吃",
