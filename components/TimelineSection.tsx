@@ -19,7 +19,7 @@ export const TimelineSection: React.FC<TimelineSectionProps> = ({ language }) =>
   const [isRendered, setIsRendered] = useState(false);
   
   // Lock State
-  const [isUnlocked, setIsUnlocked] = useState(false);
+ const [isUnlocked, setIsUnlocked] = useState(true);
   const [inputAnswer, setInputAnswer] = useState('');
   const [isError, setIsError] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
