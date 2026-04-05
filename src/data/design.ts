@@ -5,29 +5,29 @@ export const DESIGN_DATA: Project[] = [
     id: 'd1',
     common: {
       category: 'Video Production',
-      image: '/video-prod-cover.jpg', // 建议替换为你上传到public的图片
+      image: '/video-prod-cover.jpg', 
       figmaUrl: 'https://github.com/wangqiao650', 
       gallery: []
     },
     zh: {
-  title: '影像创作 | 视听叙事研究',
-  subtitle: '短片剪辑与叙事逻辑构建',
-  description: '基于 Premiere Pro 的非线性编辑实验。通过对原始素材的解构与重组，探索镜头语言在时空表达中的叙事张力。',
-  role: '视频剪辑师 / 拍摄',
-  tags: ['非线性编辑', '视听语言', '叙事结构', 'PR'],
-  awards: ["课程优秀实践作品"],
-  concept: "以‘蒙太奇手法’为核心逻辑，强调镜头间的内在联系与情绪递进。通过控制剪辑节奏（Pacing）与声画同步，构建具有沉浸感的影像空间。",
-  roleDetail: "负责全片粗剪与精剪、脚本数字化拆解、视听节奏把控及多轨音频混合处理。"
-}
+      title: '影像创作 | 视听叙事研究',
+      subtitle: '短片剪辑与叙事逻辑构建',
+      description: '基于 Premiere Pro 的非线性编辑实验。通过对原始素材的解构与重组，探索镜头语言在时空表达中的叙事张力。',
+      role: '视频剪辑师 / 拍摄',
+      tags: ['非线性编辑', '视听语言', '叙事结构', 'PR'],
+      awards: ["课程优秀实践作品"],
+      concept: "以‘蒙太奇手法’为核心逻辑，强调镜头间的内在联系与情绪递进。通过控制剪辑节奏（Pacing）与声画同步，构建具有沉浸感的影像空间。",
+      roleDetail: "负责全片粗剪与精剪、脚本数字化拆解、视听节奏把控及多轨音频混合处理。"
+    },
     en: {
-      title: 'Video Engineering | Full-link Production',
-      subtitle: 'From Creative Planning to Final Delivery',
-      description: 'A comprehensive practice covering the entire workflow from initial storyboarding to final post-rendering. Optimized multi-camera collaborative flows to maximize visual impact within set frameworks.',
-      role: 'Post-production Expert',
-      tags: ['Workflow', 'Multi-cam', 'Compositing', 'Premiere Pro'],
-      awards: ["Outstanding Academic Project"],
-      concept: "Emphasizing 'Engineering Thinking'. Ensuring rigorous material organization while solving logical gaps in raw footage through precise trimming and transition handling to restore the director's vision.",
-      roleDetail: "Responsible for project directory structuring, multi-camera synchronization, subtitle system development, and final export optimization."
+      title: 'Cinematic Creation | Audiovisual Narrative Research',
+      subtitle: 'Short Film Editing & Narrative Logic Construction',
+      description: 'Non-linear editing experiments based on Premiere Pro. Exploring the narrative tension of cinematic language in spatial-temporal expression through the deconstruction and reorganization of raw footage.',
+      role: 'Video Editor / Cinematographer',
+      tags: ['NLE', 'Cinematic Language', 'Narrative Structure', 'PR'],
+      awards: ["Outstanding Course Practice"],
+      concept: "Using 'Montage' as the core logic, emphasizing the intrinsic connection and emotional progression between shots. Constructing an immersive cinematic space by controlling pacing and audio-visual synchronization.",
+      roleDetail: "Responsible for rough and fine cutting, digital script breakdown, audiovisual rhythm control, and multi-track audio mixing."
     }
   },
   {
@@ -50,9 +50,9 @@ export const DESIGN_DATA: Project[] = [
     en: {
       title: 'Portrait Photography | Stylized Exploration',
       subtitle: 'Portrait Artistic Expression Research',
-      description: 'Stylized portrait creations based on diverse themes, exploring the chemical reaction between color expressiveness and human emotions in specific environments.',
+      description: 'Stylized portrait creations based on diverse themes.',
       role: 'Portrait Photographer',
-      tags: ['Portrait', 'Color Aesthetics', 'Atmosphere'],
+      tags: ['Portrait', 'Atmosphere'],
       awards: ["Personal Commissioned Work"],
       concept: "Focusing on 'Emotion as a Medium', using large aperture bokeh or special filters to create a dreamy/filmic aesthetic, highlighting the subject's central position in the frame.",
       roleDetail: "Responsible for model direction, location scouting, post-processing film-style grading, and final layout design."
@@ -79,7 +79,7 @@ export const DESIGN_DATA: Project[] = [
       title: 'UX Prototype | Zhizhi Campus',
       subtitle: 'Campus Second-hand Trading System',
       description: 'A vertical platform for university students to trade second-hand books and idle items. Solving waste disposal pain points via a credit incentive system.',
-      role: 'Interaction Designer / PM',
+      role: 'Web Design',
       tags: ['Hi-fi Prototype', 'Logic', 'Eco-system', 'Axure'],
       awards: ["Excellence Project Award"],
       concept: "Centered on 'Low-carbon Circulation', utilizing card-based layouts to reduce cognitive load. The UI uses green tones to convey environmental values with an integrated credit system.",
@@ -125,21 +125,4 @@ export const DESIGN_DATA: Project[] = [
       title: '本科毕设 | 层层常德',
       subtitle: '数字插画设计',
       description: '本课题通过数字插画和AR技术相结合的方式，推广常德文化，利用分层构图与动态展示强化视觉效果。',
-      role: '全流程负责人',
-      tags: ['数字插画', 'AR设计', '非遗文化'],
-      awards: ["毕业设计入选作品"],
-      concept: "探讨AR技术在文化传播中的应用，为非遗文化的现代化表达和文创产品设计提供创新路径。",
-      roleDetail: "独立完成从文化调研、插画绘制到AR交互逻辑的完整开发。"
-    },
-    en: {
-      title: 'Undergraduate Thesis | Layers of Changde',
-      subtitle: 'Digital Illustration & AR Design',
-      description: 'Integrating digital illustration with AR technology to promote Changde culture, using layered composition to enhance visual interaction.',
-      role: 'Lead Designer',
-      tags: ['Digital Illustration', 'AR', 'Intangible Heritage'],
-      awards: ["Thesis Selection"],
-      concept: "Exploring AR's application in cultural dissemination, providing innovative paths for modern expression of intangible heritage.",
-      roleDetail: "Independently completed cultural research, illustration drawing, and AR interaction logic development."
-    }
-  }
-];
+      role: '
