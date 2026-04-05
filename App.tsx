@@ -7,11 +7,25 @@ import { PortfolioSection } from './components/PortfolioSection';
 import { ArticleSection } from './components/ArticleSection';
 import { TimelineSection } from './components/TimelineSection';
 import { MusicPlayer } from './components/MusicPlayer';
-import { Mail, MapPin, RotateCcw, MessageSquare, Instagram, Youtube, FileText, Aperture, Github } from 'lucide-react';
+// 补全了可能用到的图标：Camera
+import { Mail, MapPin, RotateCcw, MessageSquare, Instagram, Youtube, FileText, Aperture, Github, Camera } from 'lucide-react';
+
+// 核心数据引入
 import { NAV_ITEMS } from './data/navigation';
 import { CONTACT_DATA } from './src/data/contact';
 import { ARTICLES_PAGE_DATA } from './src/data/articles';
 import { PORTFOLIO_PAGE_DATA } from './src/data/portfolioPage';
+
+// 【关键修改】：从 constants 引入所有新定义的变量
+import { 
+  CATEGORY_LABELS, 
+  PROJECTS, 
+  EXPERIENCES, 
+  EXPERIENCE_LABELS, 
+  LIFE_LABELS, 
+  LIFE_DATA 
+} from './constants'; 
+
 import { Language, Category } from './types';
 
 interface ExplodedElementData {
