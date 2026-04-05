@@ -8,7 +8,7 @@ import { ArticleSection } from './components/ArticleSection';
 import { TimelineSection } from './components/TimelineSection';
 import { MusicPlayer } from './components/MusicPlayer';
 import { Mail, MapPin, RotateCcw, MessageSquare, Instagram, Youtube, FileText, Aperture, Github } from 'lucide-react';
-import { NAV_ITEMS } from './src/data/navigation';
+import { NAV_ITEMS } from './data/navigation';
 import { CONTACT_DATA } from './src/data/contact';
 import { ARTICLES_PAGE_DATA } from './src/data/articles';
 import { PORTFOLIO_PAGE_DATA } from './src/data/portfolioPage';
