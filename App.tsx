@@ -5,7 +5,7 @@ import Matter from 'matter-js';
 import { Sidebar } from './src/components/Sidebar';
 import { HeroSection } from './src/components/HeroSection';
 import { PortfolioSection } from './src/components/PortfolioSection';
-import { experienceection } from './src/components/experienceection';
+import { ExperienceSection } from './src/components/experienceection';
 import { TimelineSection } from './src/components/TimelineSection';
 import { MusicPlayer } from './src/components/MusicPlayer';
 
@@ -18,7 +18,6 @@ import { CONTACT_DATA } from './src/data/contact';
 import { experience_PAGE_DATA } from './src/data/experience';
 import { PORTFOLIO_PAGE_DATA } from './src/data/portfolioPage';
 
-// 4. 修正核心常量路径：指向 src/constants
 import { 
   CATEGORY_LABELS, 
   PROJECTS, 
@@ -26,10 +25,10 @@ import {
   EXPERIENCE_LABELS, 
   LIFE_LABELS, 
   LIFE_DATA 
-} from './src/constants'; 
+} from './constants'; 
 
 // 5. 修正类型定义路径
-import { Language, Category } from './src/types';
+import { Language, Category } from './types';
 
 interface ExplodedElementData {
   element: HTMLElement;
@@ -60,31 +59,6 @@ function App() {
   };
 
   // ... 后面接 engineRef, useEffect 等代码 ...
-
-function App() {
-  // --- 状态定义 (必须包含 filter，否则生活界面黑屏) ---
-  const [activeTab, setActiveTab] = useState('dashboard');
-  const [language, setLanguage] = useState<Language>('zh');
-  const [theme, setTheme] = useState<'light' | 'dark'>('light');
-  const [portfolioCategory, setPortfolioCategory] = useState<string>('All');
-  const [gravityActive, setGravityActive] = useState(false);
-  const [filter, setFilter] = useState('All'); // <--- 关键修复
-
-  // --- 视图过渡逻辑 ---
-  const startViewTransition = (update: () => void) => {
-    if (typeof window !== 'undefined' && window.innerWidth < 768) {
-      update();
-      return;
-    }
-    const anyDoc = document as any;
-    if (anyDoc && typeof anyDoc.startViewTransition === 'function') {
-      anyDoc.startViewTransition(update);
-    } else {
-      update();
-    }
-  };
-  
-  // ... 其余逻辑 (engineRef, useEffect 等) 保持不变
 
 function App() {
   const [activeTab, setActiveTab] = useState('dashboard');
