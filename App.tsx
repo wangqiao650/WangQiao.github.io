@@ -5,7 +5,7 @@ import Matter from 'matter-js';
 import { Sidebar } from './src/components/Sidebar';
 import { HeroSection } from './src/components/HeroSection';
 import { PortfolioSection } from './src/components/PortfolioSection';
-import { ArticleSection } from './src/components/ArticleSection';
+import { experienceection } from './src/components/experienceection';
 import { TimelineSection } from './src/components/TimelineSection';
 import { MusicPlayer } from './src/components/MusicPlayer';
 
@@ -15,7 +15,7 @@ import { Mail, MapPin, RotateCcw, MessageSquare, Instagram, Youtube, FileText, A
 // 3. 修正数据路径：全部指向 src/data
 import { NAV_ITEMS } from './src/data/navigation'; 
 import { CONTACT_DATA } from './src/data/contact';
-import { ARTICLES_PAGE_DATA } from './src/data/articles';
+import { experience_PAGE_DATA } from './src/data/experience';
 import { PORTFOLIO_PAGE_DATA } from './src/data/portfolioPage';
 
 // 4. 修正核心常量路径：指向 src/constants
@@ -462,7 +462,7 @@ function App() {
              <PortfolioSection language={language} externalFilter={portfolioCategory} />
           </div>
         );
-     case 'articles':
+     case 'experience':
   return (
     <div className="pt-20 w-full max-w-[96vw] mx-auto pb-24">
       <div className="mb-24 flex flex-col items-center text-center">
@@ -477,9 +477,10 @@ function App() {
       <TimelineSection language={language} />
     </div>
   );
-     case 'about': // 这里现在是“生活”板块
-        const lifeLabels = LIFE_LABELS[language];
-        const lifeItems = LIFE_DATA[language];
+     case 'about':
+        { // 开启大括号，保护里面的 lifeLabels 变量
+          const lifeLabels = LIFE_LABELS[language];
+          const lifeItems = LIFE_DATA[language];
 
         return (
           <div className="pt-20 w-full max-w-[96vw] mx-auto pb-24">
@@ -554,7 +555,8 @@ function App() {
               </div>
             </div>
           </div>
-        );
+       );
+        } // 必须在这里关闭大括号
 
       case 'contact':
         {
@@ -615,8 +617,8 @@ function App() {
         </p>
       </div>
     </div>
-  );
-          } // 关闭 case 'contact' 的大括号
+          );
+        } // 必须在这里关闭大括号
       default:
         return (
           <>
