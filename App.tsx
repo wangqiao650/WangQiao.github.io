@@ -388,20 +388,21 @@ function App() {
              <PortfolioSection language={language} externalFilter={portfolioCategory} />
           </div>
         );
-      case 'articles':
-        return (
-          <div className="pt-20 w-full max-w-[96vw] mx-auto">
-             <div className="mb-24 flex flex-col items-center text-center">
-               <h1 className="text-[8vw] leading-none font-black mb-8 text-black dark:text-white transition-colors duration-300">
-                 {ARTICLES_PAGE_DATA[language].title}
-               </h1>
-               <p className="text-2xl text-gray-500 dark:text-gray-400 max-w-2xl font-medium transition-colors duration-300">
-                 {ARTICLES_PAGE_DATA[language].description}
-               </p>
-             </div>
-             <ArticleSection language={language} />
-          </div>
-        );
+     case 'articles':
+  return (
+    <div className="pt-20 w-full max-w-[96vw] mx-auto pb-24">
+      <div className="mb-24 flex flex-col items-center text-center">
+        <h1 className="text-[8vw] leading-none font-black mb-8 text-black dark:text-white transition-colors duration-300">
+          {language === 'zh' ? '经历' : 'Experience'}
+        </h1>
+        <p className="text-2xl text-gray-500 dark:text-gray-400 max-w-2xl font-medium">
+          {language === 'zh' ? '教育背景与职业生涯回顾' : 'A journey through my education and career.'}
+        </p>
+      </div>
+      {/* 直接复用你已经有的 TimelineSection 组件，它就是专门展示经历的 */}
+      <TimelineSection language={language} />
+    </div>
+  );
       case 'about':
         return (
           <div className="pt-20 w-full max-w-[96vw] mx-auto">
