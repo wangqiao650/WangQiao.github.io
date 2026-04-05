@@ -22,14 +22,14 @@ export const ARTICLE_DATA = [
     common: {
       category: ArticleCategory.TALK,
       link: 'https://github.com/yourname',
-      coverImage: '/group photo.jpg',
-      date: '2024-01-01'
+      coverImage: '/group-photo.jpg',     // 假设你已将文件名改为连字符格式
+      date: '2025-01-01'
     },
     zh: {
       title: '这个页面只是展示架，抱歉 -v- 我不喜欢写文章',
     },
     en: {
-      title: 'Example Article Title',
+      title: 'This is just a showcase - I prefer creating over writing.', // 🚩 英文同步修改
     }
   }
 ];
