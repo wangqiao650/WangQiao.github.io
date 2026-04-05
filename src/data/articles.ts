@@ -22,7 +22,7 @@ export const ARTICLE_DATA = [
     common: {
       category: ArticleCategory.TALK,
       link: 'https://github.com/yourname',
-      coverImage: 'https://via.placeholder.com/800x450?text=Article+Cover',
+      coverImage: '/group photo.jpg',
       date: '2024-01-01'
     },
     zh: {
