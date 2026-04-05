@@ -7,7 +7,7 @@ export enum Category {
   DESIGN = 'Graphics & UI',
   PHOTO = 'Photography',
   DEV = 'Development',
-  ARTICLE = 'Article'
+  EXPERIENCE = 'Experience' // 原 ARTICLE = 'Article'
 }
 
 export enum ArticleCategory {
