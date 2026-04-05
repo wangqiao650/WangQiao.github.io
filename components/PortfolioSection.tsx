@@ -4,7 +4,11 @@ import { createPortal } from 'react-dom';
 import { PROJECTS, CATEGORY_LABELS } from '../constants';
 import { Category, Language, Project } from '../types';
 import { PHOTOGRAPHY_GALLERY } from '../src/data/photography';
-import { ArrowUpRight, X, Terminal, MessageCircle, IdCard, Github, ExternalLink, ChevronLeft, ChevronRight, FileText, Film } from 'lucide-react';
+import { 
+  ArrowUpRight, X, Terminal, MessageCircle, IdCard, 
+  Github, ExternalLink, ChevronLeft, ChevronRight, 
+  FileText, Film 
+} from 'lucide-react';
 
 interface PortfolioSectionProps {
   language: Language;
