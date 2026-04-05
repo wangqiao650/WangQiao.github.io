@@ -26,7 +26,7 @@ export const ARTICLE_DATA = [
       date: '2024-01-01'
     },
     zh: {
-      title: '示例文章标题',
+      title: '这个页面只是展示架，抱歉 -v- 我不喜欢写文章',
     },
     en: {
       title: 'Example Article Title',
