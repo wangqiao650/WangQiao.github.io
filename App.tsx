@@ -41,6 +41,13 @@ function App() {
   const [portfolioCategory, setPortfolioCategory] = useState<string>('All');
   
   const [gravityActive, setGravityActive] = useState(false);
+  
+  // 【必须添加这一行，否则生活页面必黑屏】
+  const [filter, setFilter] = useState('All'); 
+
+  const startViewTransition = (update: () => void) => {
+    // ... 后续代码保持不变
+  
 
   const startViewTransition = (update: () => void) => {
     // Disable view transitions on mobile to prevent flickering and performance issues
