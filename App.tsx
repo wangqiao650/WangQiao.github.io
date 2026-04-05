@@ -1,22 +1,17 @@
 
-import React, { useState, useEffect, useRef } from 'react';
-import Matter from 'matter-js';
-import { Sidebar } from './components/Sidebar';
-import { HeroSection } from './components/HeroSection';
-import { PortfolioSection } from './components/PortfolioSection';
-import { ArticleSection } from './components/ArticleSection';
-import { TimelineSection } from './components/TimelineSection';
-import { MusicPlayer } from './components/MusicPlayer';
-// 补全了可能用到的图标：Camera
+// 1. 修正 Lucide 图标引入（补全 Camera）
 import { Mail, MapPin, RotateCcw, MessageSquare, Instagram, Youtube, FileText, Aperture, Github, Camera } from 'lucide-react';
 
-// 核心数据引入
-import { NAV_ITEMS } from './data/navigation';
+// 2. 修正导航数据路径 (如果 navigation.ts 在 src/data 下)
+import { NAV_ITEMS } from './src/data/navigation'; 
+
+// 3. 修正核心数据路径
 import { CONTACT_DATA } from './src/data/contact';
 import { ARTICLES_PAGE_DATA } from './src/data/articles';
 import { PORTFOLIO_PAGE_DATA } from './src/data/portfolioPage';
 
-// 【关键修改】：从 constants 引入所有新定义的变量
+// 4. 【最关键】修正 constants 的路径
+// 假设 constants.ts 在 src 文件夹内，路径应改为 './src/constants'
 import { 
   CATEGORY_LABELS, 
   PROJECTS, 
@@ -24,9 +19,10 @@ import {
   EXPERIENCE_LABELS, 
   LIFE_LABELS, 
   LIFE_DATA 
-} from './constants'; 
+} from './src/constants'; 
 
-import { Language, Category } from './types';
+// 5. 修正类型定义路径
+import { Language, Category } from './src/types';
 
 interface ExplodedElementData {
   element: HTMLElement;
