@@ -569,19 +569,8 @@ function App() {
                   {content.intro}
                 </p>
               </div>
-
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                {/* WeChat / 公众号 */}
-                <div className="p-12 border-2 border-gray-100 dark:border-gray-800 rounded-[2rem] hover:border-[#07C160] transition-colors duration-300 group cursor-default text-center">
-                  <div className="w-16 h-16 mx-auto mb-6 flex items-center justify-center text-gray-400 group-hover:text-[#07C160] transition-colors">
-                    <MessageSquare size={48} />
-                  </div>
-                  <h3 className="text-2xl font-bold mb-2">{language === 'zh' ? '微信/公众号' : 'WeChat'}</h3>
-                  <p className="text-lg opacity-60">{content.socials.wechat}</p>
-                </div>
-                {/* 后续的小红书等 Social Card 保持不变... */}
         
-        {/* WeChat / 公众号 */}
+        {/* WeChat / 微信 */}
         <div className="p-12 border-2 border-gray-100 dark:border-gray-800 rounded-[2rem] hover:border-[#07C160] transition-colors duration-300 group cursor-default text-center">
           <div className="w-16 h-16 mx-auto mb-6 flex items-center justify-center text-gray-400 group-hover:text-[#07C160] transition-colors">
             <MessageSquare size={48} />
@@ -627,6 +616,7 @@ function App() {
       </div>
     </div>
   );
+          } // 关闭 case 'contact' 的大括号
       default:
         return (
           <>
