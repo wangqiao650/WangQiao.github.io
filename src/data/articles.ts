@@ -7,7 +7,7 @@ export interface ArticlesPageContent {
 
 export const ARTICLES_PAGE_DATA: Record<Language, ArticlesPageContent> = {
   zh: {
-    title: '文章',
+    title: '生活',
     description: '个人思考、学习分享与生活记录。'
   },
   en: {
