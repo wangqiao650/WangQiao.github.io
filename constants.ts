@@ -4,20 +4,22 @@ import { PROJECT_DATA } from './src/data/projects';
 import { ARTICLE_DATA } from './src/data/articles';
 
 // 1. 作品页面的分类标签 (Projects)
-export const CATEGORY_LABELS: Record<Language, Record<string, string>> = {
+export const CATEGORY_LABELS = {
   zh: {
     'All': '全部',
-    'Videography': '动态影像',
-    'Graphics & UI': '平面交互',
-    'Photography': '静态摄影',
-    'digital illustration': '数字插画'
+    'VIDEO PRODUCTION': '短视频制作',      // 必须和图片中的英文完全一致
+    'digital illustration': '数字插画'     // 必须和图片中的英文完全一致
+    'UI/UX DESIGN': '平面交互设计',        // 注意：如果图片里是大写，这里也要大写
+    'THESIS PROJECT': '本科毕设',
+    'MOTION GRAPHICS': '视觉特效研究'
   },
   en: {
     'All': 'All',
-    'Videography': 'Videography',
-    'Graphics & UI': 'Graphics & UI',
-    'Photography': 'Photography',
-    'digital illustration': 'digital illustration'
+    'VIDEO PRODUCTION': 'Video Production',
+    'digital illustration': 'digital illustration',
+    'UI/UX DESIGN': 'UI/UX Design',
+    'THESIS PROJECT': 'Thesis Project',
+    'MOTION GRAPHICS': 'Motion Graphics'
   }
 };
 
