@@ -20,22 +20,20 @@ export const CATEGORY_LABELS: Record<Language, Record<string, string>> = {
   }
 };
 
-export const ARTICLE_LABELS: Record<Language, Record<string, string>> = {
+export const EXPERIENCE_LABELS: Record<Language, Record<string, string>> = {
   zh: {
     'All': '全部',
-    [ArticleCategory.DIT]: 'DiT | 数媒与课程',
-    [ArticleCategory.LUNA]: 'LUNA | 影像相关',
-    [ArticleCategory.TALK]: '瞎叨be叨 | 杂记',
-    [ArticleCategory.AFTER8]: 'After8 | 聊艺术',
-    [ArticleCategory.SERENITY]: '山海疗养院 | 游记'
+    'Education': '教育经历',
+    'Work': '工作实践',
+    'Award': '荣誉奖项',
+    'Project': '核心项目'
   },
   en: {
     'All': 'All',
-    [ArticleCategory.DIT]: 'DiT | DMT & Courses',
-    [ArticleCategory.LUNA]: 'LUNA | Visual Arts',
-    [ArticleCategory.TALK]: 'Random Thoughts',
-    [ArticleCategory.AFTER8]: 'After8 | Art Talk',
-    [ArticleCategory.SERENITY]: 'Serenity Vista | Travel'
+    'Education': 'Education',
+    'Work': 'Experience',
+    'Award': 'Awards',
+    'Project': 'Key Projects'
   }
 };
 
@@ -62,7 +60,7 @@ export const PROJECTS: Record<Language, Project[]> = {
   }))
 };
 
-export const ARTICLES: Record<Language, Article[]> = {
+export const EXPERIENCES: Record<Language, any[]> = {
   zh: ARTICLE_DATA.map(a => ({
     id: a.id,
     ...a.common,
