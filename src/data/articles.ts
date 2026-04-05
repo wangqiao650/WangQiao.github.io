@@ -21,7 +21,7 @@ export const ARTICLE_DATA = [
     id: 't1',
     common: {
       category: ArticleCategory.TALK,
-      link: 'https://github.com/yourname',
+      link: 'https://github.com/wangqiao650/WangQiao.github.io',
       coverImage: '/group-photo.jpg',     // 假设你已将文件名改为连字符格式
       date: '2025-01-01'
     },
