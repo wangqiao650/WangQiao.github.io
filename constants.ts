@@ -7,6 +7,12 @@ import { ARTICLE_DATA } from './src/data/articles';
 export const CATEGORY_LABELS: Record<Language, Record<string, string>> = {
   zh: {
     'All': '全部',
+    // 精准修复三个顽固角标：
+    'Category Name': '示例分类',      
+    'Commercial Video': '账号运营',   // 已将“品牌营销”修改为“账号运营”
+    'Photography': '静态摄影',        
+    
+    // 其他分类同步保持：
     'Video Production': '短视频制作',
     'Digital Illustration': '数字插画',
     'UI/UX Design': '交互设计',
@@ -16,6 +22,9 @@ export const CATEGORY_LABELS: Record<Language, Record<string, string>> = {
   },
   en: {
     'All': 'All',
+    'Category Name': 'Example Category',
+    'Commercial Video': 'Account Operations', // 对应英文修改为更专业的术语
+    'Photography': 'Photography',
     'Video Production': 'Video Production',
     'Digital Illustration': 'Digital Illustration',
     'UI/UX Design': 'UI/UX Design',
@@ -24,8 +33,6 @@ export const CATEGORY_LABELS: Record<Language, Record<string, string>> = {
     'AI Creation': 'AI Creation'
   }
 };
-
-// 建议同步更新经历页面的标签，保持风格统一
 export const EXPERIENCE_LABELS: Record<Language, Record<string, string>> = {
   zh: {
     'All': '全部',
