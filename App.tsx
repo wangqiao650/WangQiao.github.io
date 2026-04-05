@@ -477,101 +477,109 @@ function App() {
       <TimelineSection language={language} />
     </div>
   );
-      case 'about': // 这里现在是“生活”板块
-  const lifeLabels = LIFE_LABELS[language];
-  const lifeItems = LIFE_DATA[language];
+     case 'about': // 这里现在是“生活”板块
+        const lifeLabels = LIFE_LABELS[language];
+        const lifeItems = LIFE_DATA[language];
 
-  return (
-    <div className="pt-20 w-full max-w-[96vw] mx-auto pb-24">
-      {/* 顶部巨幕标题 */}
-      <div className="mb-24 flex flex-col items-center text-center">
-        <h1 className="text-[12vw] md:text-[8vw] leading-none font-black mb-8 text-black dark:text-white tracking-tighter">
-          {language === 'zh' ? '生活' : 'LIFE'}
-        </h1>
-        <p className="text-xl md:text-2xl text-gray-500 dark:text-gray-400 max-w-2xl font-medium px-4">
-          {language === 'zh' ? '个人思考、学习分享与生活记录。' : 'Personal thoughts and life records.'}
-        </p>
-      </div>
-
-      <div className="flex flex-col lg:flex-row gap-12">
-        {/* 左侧分类（沿用原文章排版） */}
-        <div className="lg:w-64 flex-shrink-0">
-          <div className="sticky top-32">
-            <div className="flex items-center gap-2 mb-8 text-gray-400 font-bold uppercase tracking-widest text-sm">
-              <div className="w-4 h-[2px] bg-current"></div>
-              {language === 'zh' ? '分类' : 'Categories'}
+        return (
+          <div className="pt-20 w-full max-w-[96vw] mx-auto pb-24">
+            {/* 顶部巨幕标题 */}
+            <div className="mb-24 flex flex-col items-center text-center">
+              <h1 className="text-[12vw] md:text-[8vw] leading-none font-black mb-8 text-black dark:text-white tracking-tighter">
+                {language === 'zh' ? '生活' : 'LIFE'}
+              </h1>
+              <p className="text-xl md:text-2xl text-gray-500 dark:text-gray-400 max-w-2xl font-medium px-4">
+                {language === 'zh' ? '个人思考、学习分享与生活记录。' : 'Personal thoughts and life records.'}
+              </p>
             </div>
-            <div className="flex flex-wrap lg:flex-col gap-2">
-              {Object.entries(lifeLabels).map(([key, label]) => (
-                <button
-                  key={key}
-                  onClick={() => setFilter(key)}
-                  className={`px-6 py-3 rounded-full text-left transition-all duration-300 font-bold ${
-                    filter === key 
-                      ? 'bg-black text-white dark:bg-white dark:text-black scale-105 shadow-xl' 
-                      : 'hover:bg-gray-100 dark:hover:bg-gray-800 text-gray-500'
-                  }`}
-                >
-                  {label}
-                </button>
-              ))}
-            </div>
-          </div>
-        </div>
 
-        {/* 右侧卡片列表（沿用原文章排版） */}
-        <div className="flex-1 space-y-8">
-          {lifeItems
-            .filter(item => filter === 'All' || item.category === filter)
-            .map((item) => (
-              <div 
-                key={item.id}
-                className="group relative overflow-hidden border-2 border-gray-100 dark:border-gray-800 rounded-[2.5rem] hover:border-black dark:hover:border-white transition-all duration-500 bg-white dark:bg-black"
-              >
-                <div className="flex flex-col md:flex-row h-full">
-                  {/* 图片区域 */}
-                  <div className="md:w-2/5 aspect-video md:aspect-auto overflow-hidden">
-                    <img 
-                      src={item.coverImage || './default-cover.jpg'} 
-                      className="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700"
-                      alt={item.title}
-                    />
+            <div className="flex flex-col lg:flex-row gap-12">
+              {/* 左侧分类 */}
+              <div className="lg:w-64 flex-shrink-0">
+                <div className="sticky top-32">
+                  <div className="flex items-center gap-2 mb-8 text-gray-400 font-bold uppercase tracking-widest text-sm">
+                    <div className="w-4 h-[2px] bg-current"></div>
+                    {language === 'zh' ? '分类' : 'Categories'}
                   </div>
-                  {/* 文字内容 */}
-                  <div className="md:w-3/5 p-8 md:p-12 flex flex-col justify-center">
-                    <span className="text-sm font-black uppercase tracking-widest opacity-30 mb-4 block">
-                      {item.date} — {item.category}
-                    </span>
-                    <h3 className="text-3xl md:text-4xl font-black mb-6 leading-tight text-black dark:text-white">
-                      {item.title}
-                    </h3>
-                    <div className="flex items-center gap-4 text-gray-400 font-bold italic">
-                      {language === 'zh' ? '阅读全文' : 'Read More'}
-                      <div className="w-12 h-[2px] bg-current group-hover:w-24 transition-all duration-500"></div>
-                    </div>
+                  <div className="flex flex-wrap lg:flex-col gap-2">
+                    {Object.entries(lifeLabels).map(([key, label]) => (
+                      <button
+                        key={key}
+                        onClick={() => setFilter(key)}
+                        className={`px-6 py-3 rounded-full text-left transition-all duration-300 font-bold ${
+                          filter === key 
+                            ? 'bg-black text-white dark:bg-white dark:text-black scale-105 shadow-xl' 
+                            : 'hover:bg-gray-100 dark:hover:bg-gray-800 text-gray-500'
+                        }`}
+                      >
+                        {label}
+                      </button>
+                    ))}
                   </div>
                 </div>
               </div>
-            ))}
-        </div>
-      </div>
-    </div>
-  );
-  const content = CONTACT_DATA[language];
-  return (
-    <div className="pt-20 w-full max-w-[96vw] mx-auto pb-24">
-      {/* Header Section */}
-      <div className="mb-24 flex flex-col items-center text-center">
-        <h1 className="text-[8vw] leading-none font-black mb-8 text-black dark:text-white">
-          {content.contactLabel}
-        </h1>
-        <p className="text-2xl text-gray-500 dark:text-gray-400 max-w-2xl font-medium">
-          {content.intro}
-        </p>
-      </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-        {/* 每一个 Social Card 都应用以下逻辑：删除 onClick, 修改 cursor */}
+              {/* 右侧卡片列表 */}
+              <div className="flex-1 space-y-8">
+                {lifeItems
+                  .filter(item => filter === 'All' || item.category === filter)
+                  .map((item) => (
+                    <div 
+                      key={item.id}
+                      className="group relative overflow-hidden border-2 border-gray-100 dark:border-gray-800 rounded-[2.5rem] hover:border-black dark:hover:border-white transition-all duration-500 bg-white dark:bg-black"
+                    >
+                      <div className="flex flex-col md:flex-row h-full">
+                        <div className="md:w-2/5 aspect-video md:aspect-auto overflow-hidden">
+                          <img 
+                            src={item.coverImage || './default-cover.jpg'} 
+                            className="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700"
+                            alt={item.title}
+                          />
+                        </div>
+                        <div className="md:w-3/5 p-8 md:p-12 flex flex-col justify-center">
+                          <span className="text-sm font-black uppercase tracking-widest opacity-30 mb-4 block">
+                            {item.date} — {item.category}
+                          </span>
+                          <h3 className="text-3xl md:text-4xl font-black mb-6 leading-tight text-black dark:text-white">
+                            {item.title}
+                          </h3>
+                          <div className="flex items-center gap-4 text-gray-400 font-bold italic">
+                            {language === 'zh' ? '阅读全文' : 'Read More'}
+                            <div className="w-12 h-[2px] bg-current group-hover:w-24 transition-all duration-500"></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+              </div>
+            </div>
+          </div>
+        );
+
+      case 'contact':
+        {
+          const content = CONTACT_DATA[language];
+          return (
+            <div className="pt-20 w-full max-w-[96vw] mx-auto pb-24">
+              <div className="mb-24 flex flex-col items-center text-center">
+                <h1 className="text-[8vw] leading-none font-black mb-8 text-black dark:text-white">
+                  {content.contactLabel}
+                </h1>
+                <p className="text-2xl text-gray-500 dark:text-gray-400 max-w-2xl font-medium">
+                  {content.intro}
+                </p>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                {/* WeChat / 公众号 */}
+                <div className="p-12 border-2 border-gray-100 dark:border-gray-800 rounded-[2rem] hover:border-[#07C160] transition-colors duration-300 group cursor-default text-center">
+                  <div className="w-16 h-16 mx-auto mb-6 flex items-center justify-center text-gray-400 group-hover:text-[#07C160] transition-colors">
+                    <MessageSquare size={48} />
+                  </div>
+                  <h3 className="text-2xl font-bold mb-2">{language === 'zh' ? '微信/公众号' : 'WeChat'}</h3>
+                  <p className="text-lg opacity-60">{content.socials.wechat}</p>
+                </div>
+                {/* 后续的小红书等 Social Card 保持不变... */}
         
         {/* WeChat / 公众号 */}
         <div className="p-12 border-2 border-gray-100 dark:border-gray-800 rounded-[2rem] hover:border-[#07C160] transition-colors duration-300 group cursor-default text-center">
@@ -656,7 +664,7 @@ function App() {
 
          {/* Footer */}
          <footer className="w-full max-w-[96vw] mx-auto mt-32 border-t-2 border-black dark:border-white pt-12 flex flex-col md:flex-row justify-between items-center text-sm font-light text-gray-400 dark:text-gray-500 uppercase tracking-wide gap-4 transition-colors duration-300">
-            <p>© 2026 LUN3CY FAN</p>
+            <p>© 2026 WaQi FAN</p>
             <p>{content.footerDesign}</p>
          </footer>
       </main>
