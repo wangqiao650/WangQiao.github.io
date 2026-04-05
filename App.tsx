@@ -1,21 +1,24 @@
 
 import React, { useState, useEffect, useRef } from 'react';
 import Matter from 'matter-js';
-import { Sidebar } from './components/Sidebar';
-import { HeroSection } from './components/HeroSection';
-import { PortfolioSection } from './components/PortfolioSection';
-import { ArticleSection } from './components/ArticleSection';
-import { TimelineSection } from './components/TimelineSection';
-import { MusicPlayer } from './components/MusicPlayer';
+// 1. 修正组件路径：组件通常在 src/components 目录下
+import { Sidebar } from './src/components/Sidebar';
+import { HeroSection } from './src/components/HeroSection';
+import { PortfolioSection } from './src/components/PortfolioSection';
+import { ArticleSection } from './src/components/ArticleSection';
+import { TimelineSection } from './src/components/TimelineSection';
+import { MusicPlayer } from './src/components/MusicPlayer';
+
+// 2. 补全图标引入
 import { Mail, MapPin, RotateCcw, MessageSquare, Instagram, Youtube, FileText, Aperture, Github, Camera } from 'lucide-react';
 
-// --- 路径修正 (关键点) ---
+// 3. 修正数据路径：全部指向 src/data
 import { NAV_ITEMS } from './src/data/navigation'; 
 import { CONTACT_DATA } from './src/data/contact';
 import { ARTICLES_PAGE_DATA } from './src/data/articles';
 import { PORTFOLIO_PAGE_DATA } from './src/data/portfolioPage';
 
-// 注意：如果 constants.ts 在 src 目录下，必须写 ./src/constants
+// 4. 修正核心常量路径：指向 src/constants
 import { 
   CATEGORY_LABELS, 
   PROJECTS, 
@@ -25,7 +28,38 @@ import {
   LIFE_DATA 
 } from './src/constants'; 
 
+// 5. 修正类型定义路径
 import { Language, Category } from './src/types';
+
+interface ExplodedElementData {
+  element: HTMLElement;
+  originalStyle: string;
+}
+
+function App() {
+  // 6. 状态定义：必须包含 filter，否则“生活”页面逻辑会崩溃
+  const [activeTab, setActiveTab] = useState('dashboard');
+  const [language, setLanguage] = useState<Language>('zh');
+  const [theme, setTheme] = useState<'light' | 'dark'>('light');
+  const [portfolioCategory, setPortfolioCategory] = useState<string>('All');
+  const [gravityActive, setGravityActive] = useState(false);
+  const [filter, setFilter] = useState('All'); // <--- 关键修复点
+
+  // 7. 视图过渡逻辑
+  const startViewTransition = (update: () => void) => {
+    if (typeof window !== 'undefined' && window.innerWidth < 768) {
+      update();
+      return;
+    }
+    const anyDoc = document as any;
+    if (anyDoc && typeof anyDoc.startViewTransition === 'function') {
+      anyDoc.startViewTransition(update);
+    } else {
+      update();
+    }
+  };
+
+  // ... 后面接 engineRef, useEffect 等代码 ...
 
 function App() {
   // --- 状态定义 (必须包含 filter，否则生活界面黑屏) ---
