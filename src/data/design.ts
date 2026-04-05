@@ -4,146 +4,142 @@ export const DESIGN_DATA: Project[] = [
   {
     id: 'd1',
     common: {
-      category: 'Graphics & UI',
-      image: 'https://www.figma.com/file/cRFVFLypB290MP6ImMgiPd/thumbnail?ver=thumbnails/86fca228-9e5a-4b50-bc1e-8bb31f33edb9',
-      figmaUrl: 'https://www.figma.com/design/cRFVFLypB290MP6ImMgiPd/%E5%A4%A7%E5%B9%BF%E8%B5%9B-%7C-%E5%8D%B3%E6%97%B6%E8%AE%BE%E8%AE%A1-%E5%BE%81%E8%BE%B0%C2%B7HMI%E6%99%BA%E8%83%BD%E5%BA%A7%E8%88%B1%E8%AE%BE%E8%AE%A1?node-id=55-2&t=7dPgyLMJDD32pFp4-1', 
-      gallery: [
-        'https://picsum.photos/800/600?random=11',
-        'https://picsum.photos/800/600?random=12',
-        'https://picsum.photos/800/600?random=13'
-      ]
+      category: 'Video Production',
+      image: '/video-prod-cover.jpg', // 建议替换为你上传到public的图片
+      figmaUrl: 'https://github.com/wangqiao650', 
+      gallery: []
     },
     zh: {
-      title: '视觉设计系统 | 征辰 HMI 设计',
-      subtitle: 'UI/UX 设计',
-      description: '新能源汽车的人机交互界面设计。采用玻璃拟态和柔和渐变的“视觉减重”系统。',
-      role: 'UI 设计师',
-      tags: ['汽车', 'HMI', 'Figma'],
-      awards: ["课程设计优秀作品"],
-      concept: "参考了很多车载HMI的设计，我决定设计一款“视觉减重”的系统：信息更加明确，配色更清新，提升驾驶者的舒适感。我参考了很多风格，比如扁平化。但我认为，在汽车这种强调即时与准确反馈的环境，交互系统视觉上需要一个强反馈感的设计。于是毛玻璃与轻拟物化成为了我的最终选择。",
-      roleDetail: "独立完成从中控大屏到仪表盘的整套UI绘制与交互逻辑设计。"
+      title: '影像工程 | 全链路视频制作',
+      subtitle: '从创意策划到成片交付',
+      description: '完整经历了从前期分镜（Storyboard）到后期渲染的全流程实操。优化多机位协作流，确保在既定框架下实现视觉效果的最大化。',
+      role: '视频后期专家',
+      tags: ['工作流管理', '多机位剪辑', '后期合成', 'PR'],
+      awards: ["学术课程优秀产出"],
+      concept: "强调‘工程化思维’。在保证素材组织严谨性的基础上，通过精细化修剪与转场处理，解决实拍过程中的逻辑断层，还原导演意图。",
+      roleDetail: "负责工程目录搭建、多机位同步剪辑、字幕系统开发及最终导出参数优化。"
     },
     en: {
-      title: 'HMI | Pilgrimage HMI System',
-      subtitle: 'UI/UX Design',
-      description: 'HMI design for New Energy Vehicles (NEV). A "Visual Weight Reduction" system featuring glassmorphism and soft gradients.',
-      role: 'UI Designer',
-      tags: ['Automotive', 'HMI', 'Figma'],
-      awards: ["Course Design Excellence Award"],
-      concept: "I designed a 'Visual Weight Reduction' system: clearer information, fresher colors, improving driver comfort. I believed that in a car environment emphasizing immediate feedback, the interface needed strong visual feedback. Thus, glassmorphism and light skeuomorphism became my choice.",
-      roleDetail: "Independently completed the entire UI drawing and interaction logic from the central screen to the dashboard."
+      title: 'Video Engineering | Full-link Production',
+      subtitle: 'From Creative Planning to Final Delivery',
+      description: 'A comprehensive practice covering the entire workflow from initial storyboarding to final post-rendering. Optimized multi-camera collaborative flows to maximize visual impact within set frameworks.',
+      role: 'Post-production Expert',
+      tags: ['Workflow', 'Multi-cam', 'Compositing', 'Premiere Pro'],
+      awards: ["Outstanding Academic Project"],
+      concept: "Emphasizing 'Engineering Thinking'. Ensuring rigorous material organization while solving logical gaps in raw footage through precise trimming and transition handling to restore the director's vision.",
+      roleDetail: "Responsible for project directory structuring, multi-camera synchronization, subtitle system development, and final export optimization."
     }
   },
   {
     id: 'd2',
     common: {
-      category: 'Graphics & UI',
-      image: 'https://www.figma.com/file/NDxB7Lh3WxAbSuCTJj2DU1/thumbnail?ver=thumbnails/ab422914-1f7c-4e2c-84d9-da1cbd5a49c5',
-      figmaUrl: 'https://www.figma.com/design/NDxB7Lh3WxAbSuCTJj2DU1/MY-BRAND-%7C-%E5%85%AC%E4%BC%97%E5%8F%B7%E7%89%A9%E6%96%99%E8%AE%BE%E8%AE%A1%EF%BC%9A%E5%B1%B1%E6%B5%B7%E7%96%97%E5%85%BB%E9%99%A2?node-id=0-1&t=WQZ4agZJUDV7xMFW-1'
+      category: 'Photography',
+      image: '/portrait-cover.jpg',
+      figmaUrl: 'https://github.com/wangqiao650'
     },
     zh: {
-      title: '视觉设计系统 | 山海疗养院',
-      subtitle: '品牌 & VI',
-      description: '本人公众号旅游类频道的视觉识别系统。',
-      role: '品牌设计师',
-      tags: ['品牌', 'VI', '旅游'],
-      awards: ["无"],
-      concept: "我自己旅游时，不断地思考：什么才是最能代表旅游的视觉元素？是山川湖海，还是熙攘人群？我发现，路标是人们感知环境地理的重要元素。通过参考不同地区的路标设计，我设计了一套为旅游频道打造的视觉方案。",
-      roleDetail: "负责Logo设计、辅助图形开发以及导视系统的应用延展。"
+      title: '人像摄影 | 风格化视觉探索',
+      subtitle: '人像艺术表现研究',
+      description: '基于不同主题的风格化人像创作，探索色彩表现力与人物情绪在特定环境下的化学反应。',
+      role: '人像摄影师',
+      tags: ['人像摄影', '色彩美学', '氛围感'],
+      awards: ["个人委约作品"],
+      concept: "以‘情绪媒介’为核心，利用大光圈虚化或特殊滤镜营造梦幻/胶片感视觉，突出主体在画面中的视觉中心地位。",
+      roleDetail: "负责模特沟通导摄、外景选址考察、后期胶片色调风格化调教及成片排版设计。"
     },
     en: {
-      title: 'Serenity Vista',
-      subtitle: 'Branding & VI',
-      description: 'VI | Visual identity system for my personal travel channel.',
-      role: 'Brand Designer',
-      tags: ['Branding', 'VI', 'Travel'],
-      awards: ["None"],
-      concept: "I constantly thought: what visual element best represents tourism? I found that road signs are key for people to perceive their environment. Referencing road sign designs from different regions, I designed a visual scheme tailored for a tourism channel.",
-      roleDetail: "Logo design, auxiliary graphic development, and wayfinding system application."
+      title: 'Portrait Photography | Stylized Exploration',
+      subtitle: 'Portrait Artistic Expression Research',
+      description: 'Stylized portrait creations based on diverse themes, exploring the chemical reaction between color expressiveness and human emotions in specific environments.',
+      role: 'Portrait Photographer',
+      tags: ['Portrait', 'Color Aesthetics', 'Atmosphere'],
+      awards: ["Personal Commissioned Work"],
+      concept: "Focusing on 'Emotion as a Medium', using large aperture bokeh or special filters to create a dreamy/filmic aesthetic, highlighting the subject's central position in the frame.",
+      roleDetail: "Responsible for model direction, location scouting, post-processing film-style grading, and final layout design."
     }
   },
   {
     id: 'd3',
     common: {
-      category: 'Graphics & UI',
-      image: 'https://www.figma.com/file/z3UFyuPdEXd6hjG9CN1Ax2/thumbnail?ver=thumbnails/21d64c42-da89-494b-82f1-f64107525fd6',
-      figmaUrl: 'https://www.figma.com/design/z3UFyuPdEXd6hjG9CN1Ax2/%E5%B9%B3%E9%9D%A2-%7C-%E6%9C%88%E5%85%89%E7%96%97%E5%85%BB%E9%99%A2?node-id=0-1&t=BQlZwjpSjHFDooFz-1'
+      category: 'UI/UX Design',
+      image: '/campus-app-cover.jpg',
+      figmaUrl: 'https://github.com/wangqiao650'
     },
     zh: {
-      title: '信息图表 | 月光疗养院',
-      subtitle: '信息可视化',
-      description: '关于青年睡眠不足（“熬夜”）的信息图表。2.5D 插画风格。',
-      role: '视觉设计师',
-      tags: ['信息图表', '2.5D', '数据'],
-      awards: ["中南赛区三等奖"],
-      concept: "起初我想采取扁平化的设计，但信息可视化如果都是扁平化，视觉表现跟数据便会风格重复，从而观众视觉疲劳。于是最后我采取了2.5D + 描边的方案，给作品增加了深度。使用低饱和互补色，红色作为强调色。",
-      roleDetail: "数据收集、文案梳理、插画绘制及排版。"
+      title: '交互原型 | 吱吱校园',
+      subtitle: '校园二手循环交易系统',
+      description: '专为大学生打造的垂直化二手书及闲置物品交易平台。通过“积分激励制”解决校园废弃物处置痛点，构建绿色、高信任度的校内循环经济生态。',
+      role: '交互设计师 / 产品经理',
+      tags: ['高保真原型', '交互逻辑', '校园生态', 'Axure'],
+      awards: ["优秀项目作品"], 
+      concept: "以‘低碳循环’为核心，采用卡片式布局与低门槛的操作路径降低认知负荷。视觉上通过绿色系传递环保理念，交互上引入环保积分激励模型。",
+      roleDetail: "负责用户画像建模、全链路用户路径分析、功能架构规划及基于 Axure 的高保真动态原型开发。"
     },
     en: {
-      title: 'Infographic | Moonlight Nursing',
-      subtitle: 'Information Visualization',
-      description: 'Infographic regarding youth sleep deprivation ("Staying up late"). 2.5D illustration style.',
-      role: 'Visual Designer',
-      tags: ['Infographic', '2.5D', 'Data'],
-      awards: ["3rd Prize (Central South Region)"],
-      concept: "Initially, I considered a flat design, but if data viz is too flat, it conflicts with the data itself visually. To avoid visual fatigue, I adopted a 2.5D + outline scheme to add depth, using low-saturation complementary colors with red as an accent.",
-      roleDetail: "Data collection, copywriting, illustration, and layout."
+      title: 'UX Prototype | Zhizhi Campus',
+      subtitle: 'Campus Second-hand Trading System',
+      description: 'A vertical platform for university students to trade second-hand books and idle items. Solving waste disposal pain points via a credit incentive system.',
+      role: 'Interaction Designer / PM',
+      tags: ['Hi-fi Prototype', 'Logic', 'Eco-system', 'Axure'],
+      awards: ["Excellence Project Award"],
+      concept: "Centered on 'Low-carbon Circulation', utilizing card-based layouts to reduce cognitive load. The UI uses green tones to convey environmental values with an integrated credit system.",
+      roleDetail: "Responsible for user persona modeling, user journey mapping, functional architecture, and Axure-based high-fidelity prototyping."
     }
   },
   {
     id: 'd4',
     common: {
-      category: 'Graphics & UI',
-      image: 'https://www.figma.com/file/M9L3zEuJBRhj41JuXrOEO5/thumbnail',
-      figmaUrl: 'https://www.figma.com/design/M9L3zEuJBRhj41JuXrOEO5/%E8%AE%A1%E8%AE%BE-%7C-%E6%95%B0%E5%AD%97%E7%9F%AD%E7%89%87?node-id=0-1&t=GjOH16Ga485SW7OC-1'
+      category: 'Motion Graphics',
+      image: '/ae-study-cover.jpg',
+      figmaUrl: 'https://github.com/wangqiao650'
     },
     zh: {
-      title: '视觉设计系统 | 圆方之比',
-      subtitle: '视觉设计系统',
-      description: '《圆方之比，天地之合》的完整视觉设计系统，包括视频内元素设计、后续相关PPT。',
-      role: '视觉设计师',
-      tags: ['品牌', '视频视觉', 'Figma'],
-      awards: ["无"],
-      concept: "仿古牛皮纸设计，新中式设计风格。",
-      roleDetail: "视觉概念定义、图形系统开发及延展设计。"
+      title: 'After Effects | 视觉特效研究',
+      subtitle: '多层级合成与光影表现练习',
+      description: '利用三方插件（如Trapcode/Optical Flares）进行的视觉渲染实验。',
+      role: '特效/合成师',
+      tags: ['视觉特效', '动态图形', '后期合成'],
+      awards: ["练习作品 / 非商业项目"],
+      concept: "探索数学逻辑与艺术美感的平衡点。",
+      roleDetail: "多通道合成流程、色彩空间管理及复杂图层遮罩处理。"
     },
     en: {
-      title: 'Circle & Square System',
-      subtitle: 'Visual Design System',
-      description: 'The complete visual design system for 《圆方之比，天地之合》, including in-video element design and subsequent related PPT materials.',
-      role: 'Visual Designer',
-      tags: ['Branding', 'Video Visual', 'Figma'],
-      awards: ["None"],
-      concept: "Antique kraft paper design, new Chinese-style design.",
-      roleDetail: "Visual concept definition, graphic system development, and extension design."
+      title: 'After Effects | VFX Research',
+      subtitle: 'Multi-layer Compositing & Lighting Practice',
+      description: 'Visual rendering experiments using third-party plugins like Trapcode and Optical Flares.',
+      role: 'VFX / Compositor',
+      tags: ['VFX', 'Motion Graphics', 'Compositing'],
+      awards: ["Practice Work / Non-commercial"],
+      concept: "Exploring the balance between mathematical logic and artistic aesthetics.",
+      roleDetail: "Handling multi-pass compositing workflows, color space management, and complex layer masking."
     }
   },
   {
     id: 'd5',
     common: {
-      category: 'Graphics & UI',
-      image: 'https://www.figma.com/file/hslZfU850zu8tJ6P1Y6fbC/thumbnail',
-      figmaUrl: 'https://www.figma.com/design/hslZfU850zu8tJ6P1Y6fbC/%E6%AF%95%E8%AE%BE-%7C-%E8%AE%A1%E9%87%8F%E7%94%B5%E5%BD%B1%E5%AD%A6%E5%8F%AF%E8%A7%86%E5%8C%96?node-id=0-1&t=BT0hFhRYsmFehU60-1'
+      category: 'Thesis Project',
+      image: '/thesis-cover.jpg',
+      figmaUrl: 'https://github.com/wangqiao650'
     },
     zh: {
-      title: '本科毕设 | 基于计量电影学的影片信息图表设计',
-      subtitle: '视觉设计系统',
-      description: '基于计量电影学（Cinemetrics）的信息图表设计项目，主要是对电影进行内容上的数据分析可视化。',
-      role: '全包',
-      tags: ['信息图表', '视计量电影学', 'Figma'],
-      awards: ["无"],
-      concept: "模拟荧幕的暗调设计风格以及霓虹高饱和提示色设计。",
-      roleDetail: "啥都干啊，这可是我的毕设。"
+      title: '本科毕设 | 层层常德',
+      subtitle: '数字插画设计',
+      description: '本课题通过数字插画和AR技术相结合的方式，推广常德文化，利用分层构图与动态展示强化视觉效果。',
+      role: '全流程负责人',
+      tags: ['数字插画', 'AR设计', '非遗文化'],
+      awards: ["毕业设计入选作品"],
+      concept: "探讨AR技术在文化传播中的应用，为非遗文化的现代化表达和文创产品设计提供创新路径。",
+      roleDetail: "独立完成从文化调研、插画绘制到AR交互逻辑的完整开发。"
     },
     en: {
-      title: 'Infographic Design for Movie Information | Undergraduate Thesis',
-      subtitle: 'Visual Design System',
-      description: 'The infographic design project based on Cinemetrics, which mainly focuses on the content analysis and visualization of movies.',
-      role: 'ALL',
-      tags: ['Infographic', 'Cinemetrics', 'Figma'],
-      awards: ["None"],
-      concept: "Antique kraft paper design, new Chinese-style design.",
-      roleDetail: "Cover everything."
+      title: 'Undergraduate Thesis | Layers of Changde',
+      subtitle: 'Digital Illustration & AR Design',
+      description: 'Integrating digital illustration with AR technology to promote Changde culture, using layered composition to enhance visual interaction.',
+      role: 'Lead Designer',
+      tags: ['Digital Illustration', 'AR', 'Intangible Heritage'],
+      awards: ["Thesis Selection"],
+      concept: "Exploring AR's application in cultural dissemination, providing innovative paths for modern expression of intangible heritage.",
+      roleDetail: "Independently completed cultural research, illustration drawing, and AR interaction logic development."
     }
   }
 ];
