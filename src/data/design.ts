@@ -40,7 +40,7 @@ export const DESIGN_DATA: Project[] = [
     zh: {
       title: '人像摄影 | 风格化视觉探索',
       subtitle: '人像艺术表现研究',
-      description: '基于不同主题的风格化人像创作。',
+      description: '基于不同主题 of 风格化人像创作。',
       role: '人像摄影师',
       tags: ['人像摄影',  '氛围感'],
       awards: ["个人委约作品"],
@@ -125,4 +125,21 @@ export const DESIGN_DATA: Project[] = [
       title: '本科毕设 | 层层常德',
       subtitle: '数字插画设计',
       description: '本课题通过数字插画和AR技术相结合的方式，推广常德文化，利用分层构图与动态展示强化视觉效果。',
-      role: '
+      role: '全流程负责人',
+      tags: ['数字插画', 'AR设计', '非遗文化'],
+      awards: ["毕业设计入选作品"],
+      concept: "探讨AR技术在文化传播中的应用，为非遗文化的现代化表达和文创产品设计提供创新路径。",
+      roleDetail: "独立完成从文化调研、插画绘制到AR交互逻辑的完整开发。"
+    },
+    en: {
+      title: 'Undergraduate Thesis | Layers of Changde',
+      subtitle: 'Digital Illustration & AR Design',
+      description: 'Integrating digital illustration with AR technology to promote Changde culture, using layered composition to enhance visual interaction.',
+      role: 'Lead Designer',
+      tags: ['Digital Illustration', 'AR', 'Intangible Heritage'],
+      awards: ["Thesis Selection"],
+      concept: "Exploring AR's application in cultural dissemination, providing innovative paths for modern expression of intangible heritage.",
+      roleDetail: "Independently completed cultural research, illustration drawing, and AR interaction logic development."
+    }
+  }
+];
