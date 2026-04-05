@@ -60,20 +60,6 @@ function App() {
 
   // ... 后面接 engineRef, useEffect 等代码 ...
 
-function App() {
-  const [activeTab, setActiveTab] = useState('dashboard');
-  const [language, setLanguage] = useState<Language>('zh');
-  const [theme, setTheme] = useState<'light' | 'dark'>('light');
-  
-  const [portfolioCategory, setPortfolioCategory] = useState<string>('All');
-  
-  const [gravityActive, setGravityActive] = useState(false);
-  
-  // 【必须添加这一行，否则生活页面必黑屏】
-  const [filter, setFilter] = useState('All'); 
-
-  const startViewTransition = (update: () => void) => {
-    // ... 后续代码保持不变
   
 
   const startViewTransition = (update: () => void) => {
@@ -581,7 +567,7 @@ function App() {
           <h3 className="text-2xl font-bold mb-2">{language === 'zh' ? '视觉作品' : '500px'}</h3>
           <p className="text-lg opacity-60">{content.socials.px500}</p>
         </div>
-      </div>
+              </div> {/* 修正：在这里统一闭合网格容器 */}
 
       {/* Email Section - 同样删除跳转，仅展示 */}
       <div className="mt-8 p-12 border-2 border-gray-100 dark:border-gray-800 rounded-[2rem] text-center cursor-default">
