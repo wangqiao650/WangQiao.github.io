@@ -1,18 +1,17 @@
-import { Category, Project, Experience, Skill, Language, HonorsData, Article, ArticleCategory } from './types';
-import { Sparkles, Image, History, Send } from 'lucide-react';
+import { Project, Language } from './types';
+// 引入你的数据源
 import { PROJECT_DATA } from './src/data/projects';
 import { ARTICLE_DATA } from './src/data/articles';
+import { DEV_DATA } from './src/data/dev'; // 确保引入了你刚才修改的 AI 工具数据
 
-// 1. 作品集分类标签 (Portfolio - 用于顶部筛选和作品角标)
+// 1. 作品集分类标签 (Portfolio & AI Tools)
 export const CATEGORY_LABELS: Record<Language, Record<string, string>> = {
   zh: {
     'All': '全部',
-    // 精准修复三个顽固角标：
-    'Category Name': '示例分类',      
-    'Commercial Video': '账号运营',   // 已将“品牌营销”修改为“账号运营”
-    'Photography': '静态摄影',        
-    
-    // 其他分类同步保持：
+    'Ai工具': 'AI 工具',        // 新增：对应你 dev.ts 里的分类
+    'Category Name': '示例分类',
+    'Commercial Video': '账号运营', 
+    'Photography': '静态摄影',
     'Video Production': '短视频制作',
     'Digital Illustration': '数字插画',
     'UI/UX Design': '交互设计',
@@ -22,8 +21,9 @@ export const CATEGORY_LABELS: Record<Language, Record<string, string>> = {
   },
   en: {
     'All': 'All',
+    'Ai工具': 'AI Tools',
     'Category Name': 'Example Category',
-    'Commercial Video': 'Account Operations', // 对应英文修改为更专业的术语
+    'Commercial Video': 'Account Operations',
     'Photography': 'Photography',
     'Video Production': 'Video Production',
     'Digital Illustration': 'Digital Illustration',
@@ -33,6 +33,8 @@ export const CATEGORY_LABELS: Record<Language, Record<string, string>> = {
     'AI Creation': 'AI Creation'
   }
 };
+
+// 2. 经历页面的分类标签
 export const EXPERIENCE_LABELS: Record<Language, Record<string, string>> = {
   zh: {
     'All': '全部',
@@ -50,7 +52,7 @@ export const EXPERIENCE_LABELS: Record<Language, Record<string, string>> = {
   }
 };
 
-// 3. 生活页面的分类标签 (Life - 沿用原文章界面的侧边栏)
+// 3. 生活页面的分类标签
 export const LIFE_LABELS: Record<Language, Record<string, string>> = {
   zh: {
     'All': '全部',
@@ -68,15 +70,20 @@ export const LIFE_LABELS: Record<Language, Record<string, string>> = {
   }
 };
 
-// 4. 作品数据映射
+// --- 数据合并映射逻辑 ---
+
+// 合并原始作品数据和 AI 工具数据
+const ALL_RAW_PROJECTS = [...PROJECT_DATA, ...DEV_DATA];
+
+// 4. 最终输出的作品数据 (PROJECTS)
 export const PROJECTS: Record<Language, Project[]> = {
-  zh: PROJECT_DATA.map(p => ({
+  zh: ALL_RAW_PROJECTS.map(p => ({
     id: p.id,
     ...p.common,
     ...p.zh,
     bilingualTitle: { zh: p.zh.title, en: p.en.title }
   })),
-  en: PROJECT_DATA.map(p => ({
+  en: ALL_RAW_PROJECTS.map(p => ({
     id: p.id,
     ...p.common,
     ...p.en,
@@ -84,7 +91,7 @@ export const PROJECTS: Record<Language, Project[]> = {
   }))
 };
 
-// 5. 经历数据映射 (指向原本的 ARTICLE_DATA，后续你可以在此调整数据源)
+// 5. 经历数据映射
 export const EXPERIENCES: Record<Language, any[]> = {
   zh: ARTICLE_DATA.map(a => ({
     id: a.id,
@@ -98,7 +105,7 @@ export const EXPERIENCES: Record<Language, any[]> = {
   }))
 };
 
-// 6. 生活数据映射 (同样指向 ARTICLE_DATA，供“生活”板块的大卡片布局使用)
+// 6. 生活数据映射
 export const LIFE_DATA: Record<Language, any[]> = {
   zh: ARTICLE_DATA.map(a => ({
     id: a.id,
