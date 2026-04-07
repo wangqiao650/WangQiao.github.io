@@ -11,35 +11,12 @@ import {
 
 interface PortfolioSectionProps {
   language: Language;
-  externalFilter?: string; // 外部传入的筛选词，例如 "Video Production"
+  externalFilter?: string;
 }
 
-export const PortfolioSection = ({ language, externalFilter }: PortfolioSectionProps) => {
-  // 1. 初始化 filter，如果外部有传参优先使用外部，否则默认为 'All'
-  const [filter, setFilter] = useState(externalFilter || 'All');
-  const [selectedProject, setSelectedProject] = useState<Project | null>(null);
-
-  // 2. 【核心修复】：监听外部筛选词的变化
-  // 当用户从主页点击不同分类跳转过来时，这个 useEffect 会被触发
-  useEffect(() => {
-    if (externalFilter) {
-      setFilter(externalFilter);
-    }
-  }, [externalFilter]);
-
-  // 3. 获取当前语言下的作品列表
-  const projects = PROJECTS[language] || [];
-  
-  // 4. 定义全部分类
-  const categories = ['All', ...Object.keys(CATEGORY_LABELS[language]).filter(cat => cat !== 'All' && cat !== 'Category Name')];
-
-  // 5. 过滤逻辑
-  const filteredProjects = filter === 'All' 
-    ? projects 
-    : projects.filter(p => p.category === filter);
-
-  // ... 剩下的 GalleryImage 组件和渲染逻辑保持不变
-
+// --- 细节保全：这是你代码里的 GalleryImage 辅助组件 ---
+const GalleryImage = ({ src, alt, onClick }: { src: string, alt: string, onClick: (e: React.MouseEvent) => void }) => {
+  const [isLoaded, setIsLoaded] = useState(false);
   return (
     <div 
       className="aspect-square overflow-hidden cursor-zoom-in relative group rounded-lg shadow-sm hover:shadow-md will-change-transform transform-gpu"
@@ -47,7 +24,7 @@ export const PortfolioSection = ({ language, externalFilter }: PortfolioSectionP
     >
       {!isLoaded && (
         <div className="absolute inset-0 bg-gray-200 dark:bg-gray-800 animate-pulse flex items-center justify-center z-10">
-             <div className="w-6 h-6 border-2 border-gray-300 dark:border-gray-600 border-t-transparent rounded-full animate-spin"></div>
+          <div className="w-6 h-6 border-2 border-gray-300 dark:border-gray-600 border-t-transparent rounded-full animate-spin"></div>
         </div>
       )}
       <img 
@@ -64,36 +41,41 @@ export const PortfolioSection = ({ language, externalFilter }: PortfolioSectionP
   );
 };
 
+// --- 唯一组件入口 ---
 export const PortfolioSection: React.FC<PortfolioSectionProps> = ({ language, externalFilter }) => {
   const [filter, setFilter] = useState<string>('All');
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
   const [displayProject, setDisplayProject] = useState<Project | null>(null);
   const [isModalRendered, setIsModalRendered] = useState(false);
   
-  // Lightbox State
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
   const [touchStart, setTouchStart] = useState<number | null>(null);
   const [touchEnd, setTouchEnd] = useState<number | null>(null);
 
-  // Sync with external filter if provided
+  // 【核心修复 1】：同步外部筛选
   useEffect(() => {
     if (externalFilter) {
       setFilter(externalFilter);
+    } else {
+      setFilter('All');
     }
   }, [externalFilter]);
 
-  // Get Categories in preferred order
-  const currentProjects = PROJECTS[language];
+  const currentProjects = PROJECTS[language] || [];
+
+  // 【核心修复 2】：整合 AI 工具分类并保持排序
   const preferredOrder = [
     Category.PHOTO,
     Category.VIDEO,
     Category.DESIGN,
-    Category.DEV
+    Category.DEV,
+    'Ai工具'
   ];
   
-  const availableCategories = preferredOrder.filter(cat => 
-    currentProjects.some(p => p.category === cat) || cat === Category.DEV
-  );
+  const availableCategories = Array.from(new Set([
+    ...preferredOrder.filter(cat => currentProjects.some(p => p.category === cat)),
+    ...currentProjects.map(p => p.category)
+  ])).filter(cat => cat !== 'Category Name');
   
   const categories = ['All', ...availableCategories];
 
@@ -101,7 +83,7 @@ export const PortfolioSection: React.FC<PortfolioSectionProps> = ({ language, ex
     ? currentProjects 
     : currentProjects.filter(p => p.category === filter);
 
-  // Handle Modal Render State for Animation
+  // 弹窗与滚动锁定逻辑
   useEffect(() => {
     if (selectedProject) {
       setDisplayProject(selectedProject);
@@ -112,18 +94,16 @@ export const PortfolioSection: React.FC<PortfolioSectionProps> = ({ language, ex
       const timer = setTimeout(() => {
         setIsModalRendered(false);
         setDisplayProject(null);
-        setLightboxIndex(null); // Close lightbox when modal closes
+        setLightboxIndex(null);
       }, 300);
       return () => clearTimeout(timer);
     }
   }, [selectedProject]);
 
-  // Derived Gallery for Lightbox
   const currentGallery = displayProject 
     ? (displayProject.gallery || PHOTOGRAPHY_GALLERY[displayProject.id] || []) 
     : [];
 
-  // Lightbox Navigation
   const handlePrev = (e?: React.MouseEvent) => {
     e?.stopPropagation();
     if (lightboxIndex !== null && currentGallery.length > 0) {
