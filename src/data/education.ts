@@ -20,17 +20,15 @@ export const EDUCATION_DATA: Record<Language, any> = {
         type: 'education'
       },
       {
-       // zh 部分的修改
-{
-  id: '2',
-  year: '2023.06 - 2023.09',
-  title: '剪辑助理',
-  institution: '广州逸起文化传媒有限公司',
-  description: '负责账号内容全流程剪辑，参与百万点赞爆款视频制作。', // 确保有逗号
-  link: 'https://v.douyin.com/0JEHJ0nFSLY/',             // 新增字段
-  linkLabel: '查看视频作品',                             // 新增字段
-  type: 'work'                                           // 确保有逗号
-},
+        id: '2',
+        year: '2023.06 - 2023.09',
+        title: '剪辑助理',
+        institution: '广州逸起文化传媒有限公司',
+        description: '负责账号内容全流程剪辑，参与百万点赞爆款视频制作。',
+        link: 'https://v.douyin.com/0JEHJ0nFSLY/',
+        linkLabel: '查看视频作品',
+        type: 'work'
+      },
       {
         id: '3',
         year: '2025.02 - 2025.12',
@@ -66,6 +64,24 @@ export const EDUCATION_DATA: Record<Language, any> = {
         institution: 'HIAT',
         description: 'Focused on Video Production, VFX, and Digital Imaging.',
         type: 'education'
+      },
+      {
+        id: '2',
+        year: '2023.06 - 2023.09',
+        title: 'Editing Assistant',
+        institution: 'Guangzhou Yiqi Media',
+        description: 'Full-process editing, participated in million-like viral video production.',
+        link: 'https://v.douyin.com/0JEHJ0nFSLY/',
+        linkLabel: 'View Work',
+        type: 'work'
+      },
+      {
+        id: '3',
+        year: '2025.02 - 2025.12',
+        title: 'Video Editor',
+        institution: 'Guangzhou Qiaozhuo Technology',
+        description: 'Led multi-platform content production and overseas account operations.',
+        type: 'work'
       }
     ],
     honors: {
