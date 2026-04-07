@@ -240,9 +240,27 @@ export const TimelineSection: React.FC<TimelineSectionProps> = ({ language }) =>
                   {exp.title}
                 </div>
                 
-                <p className="text-lg md:text-xl text-gray-500 dark:text-gray-400 leading-relaxed max-w-3xl font-medium transition-colors">
-                  {exp.description}
-                </p>
+                <{/* 找到原有的 p 标签并替换为以下内容 */}
+<div className="flex flex-col gap-4">
+  <p className="text-lg md:text-xl text-gray-500 dark:text-gray-400 leading-relaxed max-w-3xl font-medium transition-colors">
+    {exp.description}
+  </p>
+  
+  {/* 新增：如果数据里有 link 字段，就显示这个跳转链接 */}
+  {exp.link && (
+    <a 
+      href={exp.link} 
+      target="_blank" 
+      rel="noopener noreferrer"
+      className="inline-flex items-center gap-2 text-black dark:text-white font-bold group/link w-fit"
+    >
+      <span className="border-b-2 border-black/20 dark:border-white/20 group-hover/link:border-black dark:group-hover/link:border-white transition-all">
+        {exp.linkLabel || '查看作品'}
+      </span>
+      <ArrowUpRight size={18} className="transform transition-transform group-hover/link:translate-x-1 group-hover/link:-translate-y-1" />
+    </a>
+  )}
+</div>
 
                 <div className="w-full h-[2px] bg-gray-100 dark:bg-gray-800 mt-8 md:mt-12 transition-colors duration-500"></div>
               </div>
