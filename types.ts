@@ -64,6 +64,9 @@ export interface Experience {
   institution: string;
   description: string;
   type: 'education' | 'work';
+  // 添加下面这两行，使用 ? 表示这两个字段是可选的
+  link?: string; 
+  linkLabel?: string;
 }
 
 export interface Skill {
