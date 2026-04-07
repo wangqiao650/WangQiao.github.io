@@ -11,8 +11,8 @@ export const CONTACT_DATA: Record<Language, any> = {
     intro: "我正在寻找视频制作、AI 创作及新媒体相关的合作机会。",
     socials: {
       wechat: "wwqq3058749862",
-      xiaohongshu: "老天爷赏饭吃",
-      bilibili: "老天爷赏饭吃-",
+      xiaohongshu: "977866917",
+      bilibili: "1628388290",
       px500: "视觉作品集"
     },
     githubLabel: "github",
