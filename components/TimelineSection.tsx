@@ -245,7 +245,6 @@ export const TimelineSection: React.FC<TimelineSectionProps> = ({ language }) =>
     {exp.description}
   </p>
   
-  {/* 新增：如果数据里有 link 字段，就显示这个跳转链接 */}
   {exp.link && (
     <a 
       href={exp.link} 
