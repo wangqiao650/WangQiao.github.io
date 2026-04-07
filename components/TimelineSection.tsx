@@ -240,7 +240,6 @@ export const TimelineSection: React.FC<TimelineSectionProps> = ({ language }) =>
                   {exp.title}
                 </div>
                 
-                <{/* 找到原有的 p 标签并替换为以下内容 */}
 <div className="flex flex-col gap-4">
   <p className="text-lg md:text-xl text-gray-500 dark:text-gray-400 leading-relaxed max-w-3xl font-medium transition-colors">
     {exp.description}
