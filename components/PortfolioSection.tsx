@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { createPortal } from 'react-dom';
 import { PROJECTS, CATEGORY_LABELS } from '../constants';
@@ -12,11 +11,34 @@ import {
 
 interface PortfolioSectionProps {
   language: Language;
-  externalFilter?: string; // Controlled by parent if needed
+  externalFilter?: string; // 外部传入的筛选词，例如 "Video Production"
 }
 
-const GalleryImage = ({ src, alt, onClick }: { src: string, alt: string, onClick: (e: React.MouseEvent) => void }) => {
-  const [isLoaded, setIsLoaded] = useState(false);
+export const PortfolioSection = ({ language, externalFilter }: PortfolioSectionProps) => {
+  // 1. 初始化 filter，如果外部有传参优先使用外部，否则默认为 'All'
+  const [filter, setFilter] = useState(externalFilter || 'All');
+  const [selectedProject, setSelectedProject] = useState<Project | null>(null);
+
+  // 2. 【核心修复】：监听外部筛选词的变化
+  // 当用户从主页点击不同分类跳转过来时，这个 useEffect 会被触发
+  useEffect(() => {
+    if (externalFilter) {
+      setFilter(externalFilter);
+    }
+  }, [externalFilter]);
+
+  // 3. 获取当前语言下的作品列表
+  const projects = PROJECTS[language] || [];
+  
+  // 4. 定义全部分类
+  const categories = ['All', ...Object.keys(CATEGORY_LABELS[language]).filter(cat => cat !== 'All' && cat !== 'Category Name')];
+
+  // 5. 过滤逻辑
+  const filteredProjects = filter === 'All' 
+    ? projects 
+    : projects.filter(p => p.category === filter);
+
+  // ... 剩下的 GalleryImage 组件和渲染逻辑保持不变
 
   return (
     <div 
