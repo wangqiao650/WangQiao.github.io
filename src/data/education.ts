@@ -24,7 +24,7 @@ export const EDUCATION_DATA: Record<Language, any> = {
         year: '2023.06 - 2023.09',
         title: '剪辑助理',
         institution: '广州逸起文化传媒有限公司',
-        description: '负责账号内容全流程剪辑，参与百万点赞爆款视频制作。',
+        description: '负责账号内容全流程剪辑，参与百万点赞爆款视频制作 https://v.douyin.com/0JEHJ0nFSLY/。',
         type: 'work'
       },
       {
@@ -32,7 +32,7 @@ export const EDUCATION_DATA: Record<Language, any> = {
         year: '2025.02 - 2025.12',
         title: '剪辑师',
         institution: '广州乔卓科技有限公司',
-        description: '主导多平台内容产出，达成 15 万个人销售额，负责 YouTube/TikTok/Ins 运营。',
+        description: '主导多平台内容产出，月达成 15 万个人销售额，也负责海外视频账号运营。',
         type: 'work'
       }
     ],
