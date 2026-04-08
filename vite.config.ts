@@ -2,38 +2,30 @@ import path from 'path';
 import { defineConfig, loadEnv } from 'vite';
 import react from '@vitejs/plugin-react';
 
-// vite.config.ts
 export default defineConfig(({ mode }) => {
-  return {
-    base: '/', // 确保这里是单斜杠
-    // ... 其他配置
-  }
-})
   const env = loadEnv(mode, '.', '');
 
   return {
-    // 2. 关键修复：确保在 GitHub Pages 顶级域名下资源路径正确
+    // 关键：确保 base 为 '/'
     base: '/', 
-    
-    server: {
-      port: 3000,
-      host: '0.0.0.0',
-    },
     
     plugins: [react()],
     
-    // 3. 注入 API KEY (保持你原有的逻辑)
-  define: {
-      'process.env': {}, // 建议加上这一行
-      'process.env.API_KEY': JSON.stringify(env.GEMINI_API_KEY || ''),
+    define: {
+      'process.env': {}, // 防止某些库报错
       'process.env.GEMINI_API_KEY': JSON.stringify(env.GEMINI_API_KEY || '')
     },
     
     resolve: {
       alias: {
-        // 4. 路径别名：既然 index.tsx 在根目录，这里指向 '.' 是正确的
         '@': path.resolve(__dirname, '.'),
       }
+    },
+
+    // 显式指定打包配置
+    build: {
+      outDir: 'dist',
+      assetsDir: 'assets',
     }
   };
 });
