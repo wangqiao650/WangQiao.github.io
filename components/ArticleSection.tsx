@@ -133,9 +133,9 @@ export const ArticleSection: React.FC<ArticleSectionProps> = ({ language }) => {
                     <div className="flex-grow flex flex-col p-4 md:p-6 justify-between min-w-0">
                         <div>
                             <div className="flex justify-between items-start gap-3 mb-2">
-                                <h3 className="text-lg md:text-2xl font-black text-black dark:text-white leading-snug group-hover:text-gray-600 dark:group-hover:text-gray-300 transition-colors duration-300 line-clamp-3">
-                                    {article.title}
-                                </h3>
+                               <h3 className="text-lg md:text-2xl ...">
+  {article[language]?.title || article.zh?.title}
+</h3>
                                 <div className="bg-black dark:bg-white text-white dark:text-black p-1.5 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-300 flex-shrink-0">
                                     <ArrowUpRight size={16} />
                                 </div>
