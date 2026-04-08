@@ -117,7 +117,7 @@ function App() {
           </div>
         );
 
-      case 'about': // 生活页面：补全置顶大标题
+case 'about': // 生活页面
         return (
           <div className="pt-20 w-full max-w-[96vw] mx-auto pb-24">
             <div className="mb-24 flex flex-col items-center text-center">
@@ -159,79 +159,42 @@ function App() {
           </div>
         );
 
-const contact = CONTACT_DATA[language] || CONTACT_DATA['zh'];
-          return (
-            <div className="pt-20 w-full max-w-[96vw] mx-auto pb-24">
-              <div className="mb-24 flex flex-col items-center text-center">
-                <h1 className="text-[8vw] leading-none font-black mb-8">{c.contactLabel}</h1>
-                <p className="text-2xl text-gray-500 dark:text-gray-400 max-w-2xl font-medium">
-                  {c.intro} {/* 这里对应你的“你好呀”等介绍语 */}
-                </p>
+      case 'contact': { // ✅ 这里补全了 case 声明和左括号
+        const c = CONTACT_DATA[language] || CONTACT_DATA['zh']; // ✅ 统一使用变量 c
+        return (
+          <div className="pt-20 w-full max-w-[96vw] mx-auto pb-24">
+            <div className="mb-24 flex flex-col items-center text-center">
+              <h1 className="text-[8vw] leading-none font-black mb-8">{c.contactLabel}</h1>
+              <p className="text-2xl text-gray-500 dark:text-gray-400 max-w-2xl font-medium">
+                {c.intro}
+              </p>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+              <div className="p-12 border-2 border-gray-100 dark:border-gray-800 rounded-[2rem] hover:border-[#07C160] transition-colors text-center">
+                <MessageSquare className="mx-auto mb-6 text-gray-400" size={48} />
+                <h3 className="text-2xl font-bold mb-2">{language === 'zh' ? '微信' : 'WeChat'}</h3>
+                <p className="text-lg opacity-60">{c.socials.wechat}</p>
               </div>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <div className="p-12 border-2 border-gray-100 dark:border-gray-800 rounded-[2rem] hover:border-[#07C160] transition-colors text-center">
-                  <MessageSquare className="mx-auto mb-6 text-gray-400" size={48} />
-                  <h3 className="text-2xl font-bold mb-2">{language === 'zh' ? '微信' : 'WeChat'}</h3>
-                  <p className="text-lg opacity-60">{c.socials.wechat}</p>
-                </div>
-                <div className="p-12 border-2 border-gray-100 dark:border-gray-800 rounded-[2rem] hover:border-[#FF2442] transition-colors text-center">
-                  <Instagram className="mx-auto mb-6 text-gray-400" size={48} />
-                  <h3 className="text-2xl font-bold mb-2">{language === 'zh' ? '小红书' : 'Red'}</h3>
-                  <p className="text-lg opacity-60">{c.socials.xiaohongshu}</p>
-                </div>
-                <div className="p-12 border-2 border-gray-100 dark:border-gray-800 rounded-[2rem] hover:border-[#00AEEC] transition-colors text-center">
-                  <Youtube className="mx-auto mb-6 text-gray-400" size={48} />
-                  <h3 className="text-2xl font-bold mb-2">Bilibili</h3>
-                  <p className="text-lg opacity-60">{c.socials.bilibili}</p>
-                </div>
-                <div className="p-12 border-2 border-gray-100 dark:border-gray-800 rounded-[2rem] hover:border-[#0078FF] transition-colors text-center">
-                  <Camera className="mx-auto mb-6 text-gray-400" size={48} />
-                  <h3 className="text-2xl font-bold mb-2">500px</h3>
-                  <p className="text-lg opacity-60">{c.socials.px500}</p>
-                </div>
+              <div className="p-12 border-2 border-gray-100 dark:border-gray-800 rounded-[2rem] hover:border-[#FF2442] transition-colors text-center">
+                <Instagram className="mx-auto mb-6 text-gray-400" size={48} />
+                <h3 className="text-2xl font-bold mb-2">{language === 'zh' ? '小红书' : 'Red'}</h3>
+                <p className="text-lg opacity-60">{c.socials.xiaohongshu}</p>
               </div>
-              <div className="mt-8 p-12 border-2 border-gray-100 dark:border-gray-800 rounded-[2rem] text-center">
-                <h3 className="text-xl font-medium mb-2 opacity-50">{c.emailMeLabel}</h3>
-                <p className="text-4xl md:text-6xl font-black break-all">{c.email}</p>
+              <div className="p-12 border-2 border-gray-100 dark:border-gray-800 rounded-[2rem] hover:border-[#00AEEC] transition-colors text-center">
+                <Youtube className="mx-auto mb-6 text-gray-400" size={48} />
+                <h3 className="text-2xl font-bold mb-2">Bilibili</h3>
+                <p className="text-lg opacity-60">{c.socials.bilibili}</p>
+              </div>
+              <div className="p-12 border-2 border-gray-100 dark:border-gray-800 rounded-[2rem] hover:border-[#0078FF] transition-colors text-center">
+                <Camera className="mx-auto mb-6 text-gray-400" size={48} />
+                <h3 className="text-2xl font-bold mb-2">500px</h3>
+                <p className="text-lg opacity-60">{c.socials.px500}</p>
               </div>
             </div>
-          );
-        }
-      default:
-        return null;
-    }
-  };
-
-  const footerContent = CONTACT_DATA[language];
-
-  return (
-    <div className="min-h-screen bg-white dark:bg-black text-black dark:text-white transition-colors duration-300">
-      <MusicPlayer language={language} />
-      <Sidebar 
-        activeTab={activeTab} 
-        setActiveTab={(tab) => startViewTransition(() => setActiveTab(tab))} 
-        language={language}
-        toggleLanguage={() => setLanguage(l => l === 'zh' ? 'en' : 'zh')}
-        theme={theme}
-        toggleTheme={() => setTheme(t => t === 'light' ? 'dark' : 'light')}
-        onTriggerGravity={triggerGravity}
-      />
-      <main className="w-full pt-40 pb-32">
-        <div key={activeTab} className="animate-fade-in">{renderContent()}</div>
-        <footer className="w-full max-w-[96vw] mx-auto mt-32 border-t-2 border-black dark:border-white pt-12 flex justify-between items-center text-sm text-gray-400">
-          <p>© 2026 WaQi FAN</p>
-          <p>{footerContent.footerDesign}</p>
-        </footer>
-      </main>
-      {gravityActive && (
-        <div className="fixed bottom-8 left-0 w-full flex justify-center z-[1001]">
-          <button onClick={resetGravity} className="bg-black text-white dark:bg-white dark:text-black px-8 py-4 rounded-full font-bold flex items-center gap-3">
-            <RotateCcw size={24} /> {language === 'zh' ? '变回去' : 'Go Back'}
-          </button>
-        </div>
-      )}
-    </div>
-  );
-}
-
-export default App;
+            <div className="mt-8 p-12 border-2 border-gray-100 dark:border-gray-800 rounded-[2rem] text-center">
+              <h3 className="text-xl font-medium mb-2 opacity-50">{c.emailMeLabel}</h3>
+              <p className="text-4xl md:text-6xl font-black break-all">{c.email}</p>
+            </div>
+          </div>
+        );
+      } // ✅ 这里补全了右括号，解决 Unexpected "default" 错误
