@@ -79,9 +79,10 @@ export const PortfolioSection: React.FC<PortfolioSectionProps> = ({ language, ex
   
   const categories = ['All', ...availableCategories];
 
-  const filteredProjects = filter === 'All' 
-    ? currentProjects 
-    : currentProjects.filter(p => p.category === filter);
+// 检查是否漏掉了默认值
+const filteredProjects = PROJECT_DATA?.filter(project => 
+  filter === 'All' || project.category === filter
+) || []; // 👈 确保最后有一个空数组 [] 作为兜底
 
   // 弹窗与滚动锁定逻辑
   useEffect(() => {
