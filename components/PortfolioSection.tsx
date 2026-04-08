@@ -7,6 +7,7 @@ import {
   ArrowUpRight, X, Terminal, MessageCircle, IdCard, 
   Github, ExternalLink, ChevronLeft, ChevronRight, 
   FileText, Film 
+  import { PROJECT_DATA } from '../src/data/projects';
 } from 'lucide-react';
 
 interface PortfolioSectionProps {
@@ -61,7 +62,9 @@ export const PortfolioSection: React.FC<PortfolioSectionProps> = ({ language, ex
     }
   }, [externalFilter]);
 
-  const currentProjects = PROJECTS[language] || [];
+  const filteredProjects = (PROJECT_DATA || []).filter(project => 
+  filter === 'All' || project.category === filter
+);
 
   // 【核心修复 2】：整合 AI 工具分类并保持排序
   const preferredOrder = [
