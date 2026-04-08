@@ -1,6 +1,6 @@
 
 import React, { useState, useEffect } from 'react';
-import { ARTICLES, ARTICLE_LABELS } from '../constants';
+import { ARTICLE_DATA, ARTICLES_PAGE_DATA } from '../src/data/articles';
 import { ArticleCategory, Language, Article } from '../types';
 import { ArrowUpRight, ArrowDown, ArrowUp, BookOpen, Calendar, Filter } from 'lucide-react';
 
@@ -14,10 +14,15 @@ export const ArticleSection: React.FC<ArticleSectionProps> = ({ language }) => {
   const [selectedArticle, setSelectedArticle] = useState<Article | null>(null);
 
   const categories = ['All', ...Object.values(ArticleCategory)];
-  const currentArticles = ARTICLES[language];
+  const currentArticles = ARTICLE_DATA || [];
 
-  const filteredAndSortedArticles = currentArticles
-    .filter(a => filter === 'All' || a.category === filter)
+ const filteredAndSortedArticles = currentArticles
+  .filter(a => filter === 'All' || a.common?.category === filter)
+  .sort((a, b) => {
+    const dateA = new Date(a.common?.date || 0).getTime();
+    const dateB = new Date(b.common?.date || 0).getTime();
+    return sortOrder === 'asc' ? dateA - dateB : dateB - dateA;
+  });
     .sort((a, b) => {
       const dateA = new Date(a.date).getTime();
       const dateB = new Date(b.date).getTime();
