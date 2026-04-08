@@ -2,8 +2,13 @@ import path from 'path';
 import { defineConfig, loadEnv } from 'vite';
 import react from '@vitejs/plugin-react';
 
+// vite.config.ts
 export default defineConfig(({ mode }) => {
-  // 1. 加载环境变量 (保持你原有的逻辑)
+  return {
+    base: '/', // 确保这里是单斜杠
+    // ... 其他配置
+  }
+})
   const env = loadEnv(mode, '.', '');
 
   return {
