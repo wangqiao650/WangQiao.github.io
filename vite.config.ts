@@ -3,11 +3,11 @@ import { defineConfig, loadEnv } from 'vite';
 import react from '@vitejs/plugin-react';
 
 export default defineConfig(({ mode }) => {
-  // 加载环境变量
+  // 1. 加载环境变量 (保持你原有的逻辑)
   const env = loadEnv(mode, '.', '');
 
   return {
-    // 关键修改：顶级域名仓库（WangQiao.github.io）必须使用 '/'
+    // 2. 关键修复：确保在 GitHub Pages 顶级域名下资源路径正确
     base: '/', 
     
     server: {
@@ -17,6 +17,7 @@ export default defineConfig(({ mode }) => {
     
     plugins: [react()],
     
+    // 3. 注入 API KEY (保持你原有的逻辑)
     define: {
       'process.env.API_KEY': JSON.stringify(env.GEMINI_API_KEY || ''),
       'process.env.GEMINI_API_KEY': JSON.stringify(env.GEMINI_API_KEY || '')
@@ -24,6 +25,7 @@ export default defineConfig(({ mode }) => {
     
     resolve: {
       alias: {
+        // 4. 路径别名：既然 index.tsx 在根目录，这里指向 '.' 是正确的
         '@': path.resolve(__dirname, '.'),
       }
     }
