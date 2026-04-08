@@ -80,7 +80,7 @@ function App() {
     // ... 物理复位逻辑 ...
   };
 
-  // --- 内容渲染路由 (专项修复点) ---
+ // --- 内容渲染路由 ---
   const renderContent = () => {
     switch (activeTab) {
       case 'dashboard':
@@ -102,7 +102,7 @@ function App() {
           </div>
         );
 
-      case 'experience': // 经历页面：修复因 Tab ID 不一致导致的空白
+      case 'experience':
         return (
           <div className="pt-20 w-full max-w-[96vw] mx-auto pb-24">
             <div className="mb-24 flex flex-col items-center text-center">
@@ -117,7 +117,7 @@ function App() {
           </div>
         );
 
-case 'about': // 生活页面
+      case 'about':
         return (
           <div className="pt-20 w-full max-w-[96vw] mx-auto pb-24">
             <div className="mb-24 flex flex-col items-center text-center">
@@ -159,8 +159,8 @@ case 'about': // 生活页面
           </div>
         );
 
-      case 'contact': { // ✅ 这里补全了 case 声明和左括号
-        const c = CONTACT_DATA[language] || CONTACT_DATA['zh']; // ✅ 统一使用变量 c
+      case 'contact': {
+        const c = CONTACT_DATA[language] || CONTACT_DATA['zh'];
         return (
           <div className="pt-20 w-full max-w-[96vw] mx-auto pb-24">
             <div className="mb-24 flex flex-col items-center text-center">
@@ -197,4 +197,43 @@ case 'about': // 生活页面
             </div>
           </div>
         );
-      } // ✅ 这里补全了右括号，解决 Unexpected "default" 错误
+      }
+      default:
+        return null;
+    }
+  };
+
+  // --- 页面 Footer 与 整体布局 ---
+  const footerData = CONTACT_DATA[language] || CONTACT_DATA['zh'];
+
+  return (
+    <div className="min-h-screen bg-white dark:bg-black text-black dark:text-white transition-colors duration-300">
+      <MusicPlayer language={language} />
+      <Sidebar 
+        activeTab={activeTab} 
+        setActiveTab={(tab) => startViewTransition(() => setActiveTab(tab))} 
+        language={language}
+        toggleLanguage={() => setLanguage(l => l === 'zh' ? 'en' : 'zh')}
+        theme={theme}
+        toggleTheme={() => setTheme(t => t === 'light' ? 'dark' : 'light')}
+        onTriggerGravity={triggerGravity}
+      />
+      <main className="w-full pt-40 pb-32">
+        <div key={activeTab} className="animate-fade-in">{renderContent()}</div>
+        <footer className="w-full max-w-[96vw] mx-auto mt-32 border-t-2 border-black dark:border-white pt-12 flex justify-between items-center text-sm text-gray-400">
+          <p>© 2026 WaQi FAN</p>
+          <p>{footerData.footerDesign}</p>
+        </footer>
+      </main>
+      {gravityActive && (
+        <div className="fixed bottom-8 left-0 w-full flex justify-center z-[1001]">
+          <button onClick={resetGravity} className="bg-black text-white dark:bg-white dark:text-black px-8 py-4 rounded-full font-bold flex items-center gap-3">
+            <RotateCcw size={24} /> {language === 'zh' ? '变回去' : 'Go Back'}
+          </button>
+        </div>
+      )}
+    </div>
+  );
+}
+
+export default App;
