@@ -69,7 +69,7 @@ export const PortfolioSection: React.FC<PortfolioSectionProps> = ({ language, ex
 );
 
   // 【核心修复 2】：整合 AI 工具分类并保持排序
-  const preferredOrder = [
+ const preferredOrder = [
     Category.PHOTO,
     Category.VIDEO,
     Category.DESIGN,
@@ -77,13 +77,13 @@ export const PortfolioSection: React.FC<PortfolioSectionProps> = ({ language, ex
     'Ai工具'
   ];
   
+  // ✅ 将所有的 currentProjects 替换为 PROJECT_DATA
   const availableCategories = Array.from(new Set([
-    ...preferredOrder.filter(cat => currentProjects.some(p => p.category === cat)),
-    ...currentProjects.map(p => p.category)
+    ...preferredOrder.filter(cat => (PROJECT_DATA || []).some(p => p.category === cat)),
+    ...(PROJECT_DATA || []).map(p => p.category)
   ])).filter(cat => cat !== 'Category Name');
   
   const categories = ['All', ...availableCategories];
-
   // 弹窗与滚动锁定逻辑
   useEffect(() => {
     if (selectedProject) {
