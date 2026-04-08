@@ -76,8 +76,7 @@ export const PortfolioSection: React.FC<PortfolioSectionProps> = ({ language, ex
     Category.DEV,
     'Ai工具'
   ];
-  
-  // ✅ 将所有的 currentProjects 替换为 PROJECT_DATA
+
   const availableCategories = Array.from(new Set([
     ...preferredOrder.filter(cat => (PROJECT_DATA || []).some(p => p.category === cat)),
     ...(PROJECT_DATA || []).map(p => p.category)
