@@ -1,14 +1,16 @@
-import React, { useState, useEffect } from 'react';
-import { createPortal } from 'react-dom';
-import { PROJECTS, CATEGORY_LABELS } from '../constants';
-import { Category, Language, Project } from '../types';
-import { PHOTOGRAPHY_GALLERY } from '../src/data/photography';
+import React, { useState, useMemo, useEffect } from 'react';
 import { 
-  ArrowUpRight, X, Terminal, MessageCircle, IdCard, 
+  Filter, Calendar, ArrowUp, ArrowDown, 
+  BookOpen, ArrowUpRight, MessageCircle, IdCard,
   Github, ExternalLink, ChevronLeft, ChevronRight, 
   FileText, Film 
-  import { PROJECT_DATA } from '../src/data/projects';
-} from 'lucide-react';
+} from 'lucide-react'; // ✅ 这里必须先闭合大括号
+
+// ✅ 这一行必须单独写在外面
+import { PROJECT_DATA } from '../src/data/projects'; 
+
+import { Language, Category, Project } from '../types';
+import { CATEGORY_LABELS } from '../constants';
 
 interface PortfolioSectionProps {
   language: Language;
