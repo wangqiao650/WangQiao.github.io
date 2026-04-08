@@ -198,14 +198,14 @@ const filteredProjects = PROJECT_DATA?.filter(project =>
                     {!project.icon && <Terminal size={32} />}
                   </div>
                   <h3 className="text-2xl font-black text-black dark:text-white mb-3">
-                    {project.title}
+                    {project[language]?.title || project.zh?.title}
                   </h3>
                   <p className="text-gray-500 dark:text-gray-400 text-base leading-relaxed line-clamp-3 mb-6">
-                    {project.description}
+                    {project[language]?.description || project.zh?.description}
                   </p>
                   <div className="mt-auto pt-4 border-t border-gray-200 dark:border-gray-800 w-full flex justify-between items-center">
                      <span className="text-xs font-bold font-mono text-gray-400 uppercase tracking-wider">
-                        {project.subtitle}
+                        {project[language]?.subtitle || project.zh?.subtitle}
                      </span>
                      <div className="bg-black dark:bg-white text-white dark:text-black p-2 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-x-2 group-hover:translate-x-0">
                         <ArrowUpRight size={18} />
@@ -220,7 +220,7 @@ const filteredProjects = PROJECT_DATA?.filter(project =>
                     {project.image && !project.image.includes('picsum') ? (
                         <img 
                           src={project.image} 
-                          alt={project.title} 
+                          alt={project[language]?.title || project.zh?.title} 
                           loading="lazy"
                           decoding="async"
                           referrerPolicy="no-referrer"
@@ -239,8 +239,8 @@ const filteredProjects = PROJECT_DATA?.filter(project =>
                         <div className="w-full h-full flex items-center justify-center bg-gray-200 dark:bg-gray-800 p-8 text-center">
                             <div>
                                 <h4 className={`${filter === 'All' ? 'text-xl md:text-2xl' : 'text-2xl md:text-3xl'} font-black text-gray-400 dark:text-gray-600 mb-2 leading-tight`}>
-                                    {project.title}<br/>
-                                    <span className="text-lg md:text-xl font-normal opacity-70">{project.subtitle}</span>
+                                    {project[language]?.title || project.zh?.title}<br/>
+                                    <span className="text-lg md:text-xl font-normal opacity-70">{project[language]?.subtitle || project.zh?.subtitle}</span>
                                 </h4>
                                 <p className="text-xs font-mono text-gray-400 mt-4 uppercase tracking-widest border border-gray-300 dark:border-gray-700 rounded-full px-3 py-1 inline-block">
                                     {language === 'zh' ? '预览部署中...' : 'Preview Deploying...'}
@@ -258,10 +258,10 @@ const filteredProjects = PROJECT_DATA?.filter(project =>
                   <div className="flex justify-between items-start border-b-2 border-gray-100 dark:border-gray-800 pb-6 group-hover:border-black dark:group-hover:border-white transition-colors duration-300 mt-auto">
                     <div className="pr-4 md:pr-8">
                         <h3 className={`${filter === 'All' ? 'text-xl md:text-2xl' : 'text-2xl md:text-4xl'} font-black text-black dark:text-white mb-2 md:mb-3 group-hover:text-gray-800 dark:group-hover:text-gray-200 leading-tight transition-colors`}>
-                          {project.title}
+                          {project[language]?.title || project.zh?.title}
                         </h3>
                       <p className="text-base md:text-lg text-gray-500 dark:text-gray-400 line-clamp-2 leading-relaxed font-medium transition-colors">
-                        {project.description}
+                        {project[language]?.description || project.zh?.description}
                       </p>
                     </div>
                     <div className="bg-black dark:bg-white text-white dark:text-black p-2 md:p-3 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-4 group-hover:translate-y-0 shrink-0">
