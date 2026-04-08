@@ -1,51 +1,63 @@
-import { Project } from '../../types';
+import { Project, Category } from '../../types';
 
 export const VIDEOGRAPHY_DATA: Project[] = [
   {
     id: 'v1',
-    common: {
-      category: 'Video Production',
-      image: 'https://via.placeholder.com/800x450?text=Viral+Video+1', // 建议替换为你的视频封面图
-      videoUrl: 'https://v.douyin.com/0JEHJ0nFSLY/', // 替换为你视频的实际链接
-    },
+    image: '/photo1.png', // 对应你上传到 public 的图片
+    externalLink: 'https://v.douyin.com/0JEHJ0nFSLY/',
+    category: Category.VIDEO,
+    tags: ['爆款', '百万点赞', '剪辑技巧'],
     zh: {
       title: '“整个路人”系列短视频',
-      subtitle: '新概念系列剪辑',
+      subtitle: '短视频制作',
       description: '单条视频点赞超百万，负责全流程剪辑与视觉包装。',
-      role: '剪辑助理 / 视觉包装',
-      tags: ['爆款', '百万点赞', '剪辑技巧'],
+      role: '剪辑师 / 视觉包装',
       concept: "通过综艺感极强的剪辑逻辑，将素材进行搞笑处理，创造出符合新媒体传播规律的内容。"
     },
     en: {
       title: '"Zheng Ge Lu Ren" Series',
-      subtitle: 'Viral Short Video Series',
+      subtitle: 'Short Video Production',
       description: 'Achieved over 1 million likes. Responsible for full-process editing.',
-      role: 'Video Editor',
-      tags: ['Viral', '1M+ Likes', 'Fast-paced'],
+      role: 'Video Editor / Visual Wrapper',
       concept: "Deconstructing raw footage into high-engagement content through rhythmic editing."
     }
   },
   {
-    id: 'v2',
-    common: {
-      category: 'Commercial Video',
-      image: 'https://via.placeholder.com/800x450?text=Sales+Video', 
-    },
+    id: 'v3',
+    image: '/photo3.png', 
+    externalLink: 'https://b23.tv/WETUQVa',
+    category: Category.VIDEO,
+    tags: ['非线性编辑', '视听语言', '叙事结构', 'PR'],
     zh: {
-      title: '汽车品牌营销视频',
-      subtitle: 'YouTube / TikTok 运营内容',
-      description: '个人月销售额达到 15 万，主导账号内容的产出与引流。',
-      role: '剪辑师 / 内容运营',
-      tags: ['带货', '跨境电商', '转化率'],
-      concept: "结合产品特性与汽车用户偏好，通过视觉引导提升点击率与转化率。"
+      title: '影像创作 | 视听叙事研究',
+      subtitle: '短视频制作',
+      description: '基于 Premiere Pro 的非线性编辑实验，通过对原始素材的解构与重组探索叙事可能。',
+      role: '导演 / 剪辑',
     },
     en: {
-      title: 'E-commerce Marketing Video',
-      subtitle: 'Global Platform Strategy',
-      description: 'Contributed to 150k CNY sales through strategic content production.',
-      role: 'Lead Video Editor',
-      tags: ['E-commerce', 'Sales Driven', 'Global'],
-      concept: "Optimizing visual guidance to boost CTR and conversion rates for global users."
+      title: 'Audiovisual Narrative Research',
+      subtitle: 'Short Video Production',
+      description: 'Non-linear editing experiment based on Premiere Pro, exploring narrative possibilities.',
+      role: 'Director / Editor',
+    }
+  },
+  {
+    id: 'v6',
+    image: '/photo6.png',
+    externalLink: 'https://v.douyin.com/y7H23cGNzDI/',
+    category: Category.VIDEO,
+    tags: ['视觉特效', '动态图形', '后期合成'],
+    zh: {
+      title: 'After Effects | 视觉特效研究',
+      subtitle: '视觉特效',
+      description: '利用三方插件（如 Trapcode/Optical Flare）进行的视觉特效合成实验。',
+      role: '特效合成师',
+    },
+    en: {
+      title: 'After Effects | VFX Research',
+      subtitle: 'Visual Effects',
+      description: 'VFX synthesis experiments using third-party plugins like Trapcode/Optical Flare.',
+      role: 'VFX Compositor',
     }
   }
 ];
