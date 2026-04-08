@@ -159,9 +159,7 @@ function App() {
           </div>
         );
 
-      case 'contact': // 联系页面：修复打招呼语不见的问题
-        {
-          const c = CONTACT_DATA[language];
+const contact = CONTACT_DATA[language] || CONTACT_DATA['zh'];
           return (
             <div className="pt-20 w-full max-w-[96vw] mx-auto pb-24">
               <div className="mb-24 flex flex-col items-center text-center">
