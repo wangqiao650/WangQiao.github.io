@@ -18,7 +18,8 @@ export default defineConfig(({ mode }) => {
     plugins: [react()],
     
     // 3. 注入 API KEY (保持你原有的逻辑)
-    define: {
+  define: {
+      'process.env': {}, // 建议加上这一行
       'process.env.API_KEY': JSON.stringify(env.GEMINI_API_KEY || ''),
       'process.env.GEMINI_API_KEY': JSON.stringify(env.GEMINI_API_KEY || '')
     },
