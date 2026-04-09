@@ -1,21 +1,17 @@
-import path from 'path';
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 
 export default defineConfig({
-  base: '/', 
+  base: '/', // 保持顶级域名仓库使用 '/'
   plugins: [react()],
   build: {
     outDir: 'dist',
     assetsDir: 'assets',
-    rollupOptions: {
-      // 确保 index.html 是唯一的入口
-      input: path.resolve(__dirname, 'index.html'),
-    },
+    // 移除 rollupOptions 里的 input 手动指定，让 Vite 自动处理根目录的 index.html
   },
   resolve: {
     alias: {
-      '@': path.resolve(__dirname, '.'),
+      '@': '/', // 将 @ 指向根目录
     }
   }
 });
