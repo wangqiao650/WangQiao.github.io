@@ -6,7 +6,7 @@ export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, '.', '');
 
   return {
-    base: '', // 保持为空，使用相对路径
+   base: '/',
     
     plugins: [react()],
     
