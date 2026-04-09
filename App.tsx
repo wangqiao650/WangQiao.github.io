@@ -42,19 +42,6 @@ function App() {
   const explodedElementsRef = useRef<ExplodedElementData[]>([]);
   const dissipatedElementsRef = useRef<ExplodedElementData[]>([]);
 
-  // --- 视图过渡 ---
-const handleHeroNavigation = (category: Category) => {
-    setPortfolioCategory(category);
-    setActiveTab('portfolio');
-};
-    const anyDoc = document as any;
-    if (anyDoc.startViewTransition) {
-      anyDoc.startViewTransition(update);
-    } else {
-      update();
-    }
-  };
-
   // --- 主题与滚动控制 ---
   useEffect(() => {
     document.documentElement.classList.toggle('dark', theme === 'dark');
@@ -64,32 +51,33 @@ const handleHeroNavigation = (category: Category) => {
     window.scrollTo(0, 0);
   }, [activeTab]);
 
+  // --- 导航逻辑 (已修复重复定义与 ViewTransition 碎片) ---
   const handleHeroNavigation = (category: Category) => {
-    startViewTransition(() => {
-      setPortfolioCategory(category);
-      setActiveTab('portfolio');
-    });
+    setPortfolioCategory(category);
+    setActiveTab('portfolio');
   };
 
-  // --- 重力特效逻辑 (保留你的核心实现) ---
+  // --- 重力特效逻辑 ---
   const triggerGravity = () => {
     if (gravityActive) return;
     setGravityActive(true);
-    // ... 物理引擎初始化逻辑 (此处建议保留你原本 App.tsx 中的 Matter.js 详细配置) ...
   };
 
   const resetGravity = () => {
     setGravityActive(false);
-    // ... 物理复位逻辑 ...
   };
 
- // --- 内容渲染路由 ---
+  // --- 内容渲染路由 ---
   const renderContent = () => {
     switch (activeTab) {
       case 'dashboard':
         return (
           <>
-            <HeroSection onNavigate={(tab) => startViewTransition(() => setActiveTab(tab))} onCategorySelect={handleHeroNavigation} language={language} />
+            <HeroSection 
+              onNavigate={(tab) => setActiveTab(tab)} 
+              onCategorySelect={handleHeroNavigation} 
+              language={language} 
+            />
             <PortfolioSection language={language} externalFilter={portfolioCategory} />
           </>
         );
@@ -136,7 +124,7 @@ const handleHeroNavigation = (category: Category) => {
                 <div className="sticky top-32 flex flex-wrap lg:flex-col gap-2">
                   {Object.entries(LIFE_LABELS[language]).map(([key, label]) => (
                     <button key={key} onClick={() => setFilter(key)} className={`px-6 py-3 rounded-full text-left font-bold transition-all ${filter === key ? 'bg-black text-white dark:bg-white dark:text-black scale-105 shadow-xl' : 'text-gray-500'}`}>
-                      {label}
+                      {label as string}
                     </button>
                   ))}
                 </div>
@@ -206,15 +194,14 @@ const handleHeroNavigation = (category: Category) => {
     }
   };
 
-  // --- 页面 Footer 与 整体布局 ---
   const footerData = CONTACT_DATA[language] || CONTACT_DATA['zh'];
 
   return (
     <div className="min-h-screen bg-white dark:bg-black text-black dark:text-white transition-colors duration-300">
       <MusicPlayer language={language} />
-     <Sidebar 
-  activeTab={activeTab} 
-  setActiveTab={(tab) => setActiveTab(tab)}
+      <Sidebar 
+        activeTab={activeTab} 
+        setActiveTab={(tab) => setActiveTab(tab)}
         language={language}
         toggleLanguage={() => setLanguage(l => l === 'zh' ? 'en' : 'zh')}
         theme={theme}
