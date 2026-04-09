@@ -43,7 +43,10 @@ function App() {
   const dissipatedElementsRef = useRef<ExplodedElementData[]>([]);
 
   // --- 视图过渡 ---
-  const startViewTransition = (update: () => void) => {
+const handleHeroNavigation = (category: Category) => {
+    setPortfolioCategory(category);
+    setActiveTab('portfolio');
+};
     const anyDoc = document as any;
     if (anyDoc.startViewTransition) {
       anyDoc.startViewTransition(update);
@@ -209,9 +212,9 @@ function App() {
   return (
     <div className="min-h-screen bg-white dark:bg-black text-black dark:text-white transition-colors duration-300">
       <MusicPlayer language={language} />
-      <Sidebar 
-        activeTab={activeTab} 
-        setActiveTab={(tab) => startViewTransition(() => setActiveTab(tab))} 
+     <Sidebar 
+  activeTab={activeTab} 
+  setActiveTab={(tab) => setActiveTab(tab)}
         language={language}
         toggleLanguage={() => setLanguage(l => l === 'zh' ? 'en' : 'zh')}
         theme={theme}
