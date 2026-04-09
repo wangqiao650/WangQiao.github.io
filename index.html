@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <link rel="icon" type="image/png" href="/123.png" />
+    <link rel="icon" type="image/png" href="./123.png" />
     <title>WaQi</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <style>
@@ -15,10 +15,8 @@
         margin: 0;
         font-family: 'Inter', sans-serif;
       }
-      .dark body {
-        background-color: #000000;
-        color: #ffffff;
-      }
+      .dark body { background-color: #000000; color: #ffffff; }
+      #root { min-height: 100vh; }
       .bullet-point {
         display: inline-block;
         width: 8px;
@@ -30,7 +28,7 @@
       .no-scrollbar::-webkit-scrollbar { display: none; }
       .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
 
-      /* Modal Animations - 重新加回来的动画部分 */
+      /* Modal & Backdrop 动画全部保留 */
       .modal-enter { opacity: 0; transform: scale(0.95); }
       .modal-enter-active {
         opacity: 1; transform: scale(1);
@@ -52,10 +50,10 @@
         transition: opacity 300ms ease, backdrop-filter 300ms ease;
       }
     </style>
-   <link rel="stylesheet" href="/index.css">
-</head>
-<body>
-  <div id="root"></div>
-  <script type="module" src="/index.tsx"></script>
-</body>
-</html> 
+    <link rel="stylesheet" href="./index.css">
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="./index.tsx"></script>
+  </body>
+</html>
